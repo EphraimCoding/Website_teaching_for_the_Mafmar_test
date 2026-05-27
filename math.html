@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת ההכנה הארצית למפמ"ר מתמטיקה - כיתה ז' הקבצה א'1</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Hebrew typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+        }
+        .math-style {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col select-none">
+
+    <!-- Top Banner & Header -->
+    <header class="bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-700 text-white shadow-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/10 backdrop-blur-md p-2 rounded-2xl border border-white/20">
+                    <i class="fa-solid fa-square-root-variable text-2xl text-yellow-300"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tight flex items-center gap-2">
+                        מכינת המפמ"ר הארצית <span class="bg-yellow-400 text-slate-950 text-xs px-3 py-1 rounded-full font-black animate-pulse">כיתה ז' - הקבצה א'1</span>
+                    </h1>
+                    <p class="text-cyan-100 text-xs">הסברים מעמיקים ונקיים מסימני דולר, מערכת רב-חידות לכל נושא ושני משחקי למידה</p>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <nav class="flex flex-wrap justify-center gap-1.5 bg-black/25 p-1 rounded-xl">
+                <button onclick="switchTab('mifmar')" id="tab-mifmar" class="tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all bg-white text-indigo-700 shadow">
+                    <i class="fa-solid fa-book-open-reader ml-1.5"></i>15 נושאי למידה
+                </button>
+                <button onclick="switchTab('sandbox')" id="tab-sandbox" class="tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all text-white hover:bg-white/10">
+                    <i class="fa-solid fa-compass-drafting ml-1.5"></i>מעבדת הנדסה (20 אתגרים)
+                </button>
+                <button onclick="switchTab('game')" id="tab-game" class="tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all text-white hover:bg-white/10">
+                    <i class="fa-solid fa-user-astronaut ml-1.5"></i>אימון חללי
+                </button>
+                <button onclick="switchTab('exam')" id="tab-exam" class="tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all bg-yellow-400 text-slate-900 hover:bg-yellow-300 shadow">
+                    <i class="fa-solid fa-file-signature ml-1.5"></i>מבחן מפמ"ר (50 שאלות)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6">
+        
+        <!-- SECTION 1: DETAILED INTERACTIVE STUDY BOOK (15 TOPICS) -->
+        <section id="content-mifmar" class="tab-content block space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-md border border-slate-100">
+                <div class="max-w-3xl mx-auto space-y-3 text-center mb-8">
+                    <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full uppercase">מרכז הלמידה הלאומי</span>
+                    <h2 class="text-3xl font-black text-slate-800">אנציקלופדיית הכנה מושלמת למפמ"ר</h2>
+                    <p class="text-slate-500 text-sm md:text-base leading-relaxed">
+                        למטה מופיעים 15 נושאי חובה המכסים את כל תוכנית הלימודים של הקבצה א'1 בכיתה ז'. 
+                        כל נושא כולל הסברים מקיפים, דוגמאות קלות להבנה, המחשות גרפיות מרהיבות ו**סדרת חידות מתקדמת** בת 3 שלבים בסוף כל פרק!
+                    </p>
+                </div>
+
+                <!-- Topic Selector Grid (15 Topics) -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+                    <button onclick="showTopicContent(1)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-indigo-50 border-indigo-200 text-indigo-950 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-indigo-600 font-semibold">פרק 1</span>
+                        <span class="text-xs md:text-sm leading-tight block">חיוביים, שליליים ואפס</span>
+                    </button>
+                    <button onclick="showTopicContent(2)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 2</span>
+                        <span class="text-xs md:text-sm leading-tight block">ציר מספרים ומספרים נגדיים</span>
+                    </button>
+                    <button onclick="showTopicContent(3)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 3</span>
+                        <span class="text-xs md:text-sm leading-tight block">כפל וחילוק מכוונים</span>
+                    </button>
+                    <button onclick="showTopicContent(4)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 4</span>
+                        <span class="text-xs md:text-sm leading-tight block">משתנים וביטויים אלגבריים</span>
+                    </button>
+                    <button onclick="showTopicContent(5)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 5</span>
+                        <span class="text-xs md:text-sm leading-tight block">חוקיות וסדרות</span>
+                    </button>
+                    <button onclick="showTopicContent(6)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 6</span>
+                        <span class="text-xs md:text-sm leading-tight block">משוואות ממעלה ראשונה</span>
+                    </button>
+                    <button onclick="showTopicContent(7)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 7</span>
+                        <span class="text-xs md:text-sm leading-tight block">שאלות מילוליות מורכבות</span>
+                    </button>
+                    <button onclick="showTopicContent(8)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 8</span>
+                        <span class="text-xs md:text-sm leading-tight block">מבוא לזוויות וסימונים</span>
+                    </button>
+                    <button onclick="showTopicContent(9)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 9</span>
+                        <span class="text-xs md:text-sm leading-tight block">זוויות צמודות ותכונותיהן</span>
+                    </button>
+                    <button onclick="showTopicContent(10)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 10</span>
+                        <span class="text-xs md:text-sm leading-tight block">זוויות קודקודיות</span>
+                    </button>
+                    <button onclick="showTopicContent(11)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 11</span>
+                        <span class="text-xs md:text-sm leading-tight block">חוצה זווית וחישובים</span>
+                    </button>
+                    <button onclick="showTopicContent(12)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 12</span>
+                        <span class="text-xs md:text-sm leading-tight block">סכום זוויות במשולש ומצולע</span>
+                    </button>
+                    <button onclick="showTopicContent(13)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 13</span>
+                        <span class="text-xs md:text-sm leading-tight block">משולשים ואי-שוויון המשולש</span>
+                    </button>
+                    <button onclick="showTopicContent(14)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 14</span>
+                        <span class="text-xs md:text-sm leading-tight block">המלבן כולו: תכונות ושטח</span>
+                    </button>
+                    <button onclick="showTopicContent(15)" class="topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24">
+                        <span class="text-xs text-slate-500 font-normal">פרק 15</span>
+                        <span class="text-xs md:text-sm leading-tight block">מערכת צירים במישור ומרחקים</span>
+                    </button>
+                </div>
+
+                <!-- Dynamic Content Display Area -->
+                <div class="mt-8 bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200/60 shadow-inner">
+                    <div id="study-topic-content" class="space-y-6">
+                        <!-- Content will be injected dynamically via JS for selected topic -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: THE 20 GEOMETRY CHALLENGES LAB -->
+        <section id="content-sandbox" class="tab-content hidden space-y-6">
+            <div class="bg-white p-5 md:p-7 rounded-3xl shadow-md border border-slate-100">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-100 pb-4 mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">מעבדת הנדסה וחקר משולשים</h2>
+                        <p class="text-slate-500 text-sm mt-1">גררו את הקודקודים באופן חופשי ללא קפיצות או בריחה של העכבר. פתרו את האתגרים!</p>
+                    </div>
+                    <button onclick="resetSandbox()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-rotate-left"></i> איפוס קודקודים
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- Left Column: The 20 Levels Mission Controller (col-span-5) -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <!-- Mission Progress -->
+                        <div class="bg-gradient-to-br from-indigo-900 to-indigo-850 text-white p-5 rounded-2xl shadow-md relative overflow-hidden">
+                            <div class="absolute -top-10 -left-10 w-24 h-24 bg-white/5 rounded-full pointer-events-none"></div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-indigo-700 text-yellow-300 text-[10px] font-black px-2.5 py-1 rounded-full uppercase">אתגר השרטוט הגדול</span>
+                                <span class="text-xs text-indigo-200 font-bold" id="mission-fraction">משימה 1 מתוך 20</span>
+                            </div>
+                            <h3 class="text-lg font-black text-white" id="mission-title">משימה 1: המשולש החד-זווית</h3>
+                            <p class="text-xs text-indigo-100 mt-1.5 leading-relaxed" id="mission-desc">גררו את הקודקודים כך שכל שלוש הזוויות במשולש יהיו חדות (קטנות מ-90°).</p>
+                            
+                            <!-- Progress Bar -->
+                            <div class="mt-4">
+                                <div class="flex justify-between text-[11px] font-bold text-indigo-200 mb-1">
+                                    <span>התקדמות באתגר</span>
+                                    <span id="mission-percent">5%</span>
+                                </div>
+                                <div class="w-full bg-indigo-950/60 h-2.5 rounded-full overflow-hidden">
+                                    <div id="mission-progress-bar" class="bg-gradient-to-r from-yellow-400 to-emerald-400 h-full transition-all duration-500" style="width: 5%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Success / Unlock Status Indicator -->
+                            <div class="mt-4 pt-3 border-t border-indigo-800 flex justify-between items-center">
+                                <div id="mission-status-badge" class="flex items-center gap-1.5 text-xs font-bold text-amber-400">
+                                    <i class="fa-solid fa-spinner animate-spin"></i> ממתין לתנאי השרטוט...
+                                </div>
+                                <button id="next-mission-btn" disabled onclick="nextMission()" class="bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 disabled:hover:bg-emerald-500 text-slate-900 px-4 py-1.5 rounded-xl font-black text-xs transition-all shadow flex items-center gap-1">
+                                    למשימה הבאה <i class="fa-solid fa-circle-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Angles Real-time stats -->
+                        <div class="bg-white p-4 rounded-2xl border border-slate-100 space-y-3 shadow-sm">
+                            <h4 class="font-bold text-slate-700 text-xs uppercase tracking-wider">זוויות המשולש הנוכחיות</h4>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-red-50 p-2.5 rounded-xl text-center border border-red-100">
+                                    <span class="block text-[10px] font-bold text-red-500">קודקוד A (α)</span>
+                                    <span id="sandbox-angle-a" class="text-base font-black text-red-700 math-style">60°</span>
+                                </div>
+                                <div class="bg-blue-50 p-2.5 rounded-xl text-center border border-blue-100">
+                                    <span class="block text-[10px] font-bold text-blue-500">קודקוד B (β)</span>
+                                    <span id="sandbox-angle-b" class="text-base font-black text-blue-700 math-style">60°</span>
+                                </div>
+                                <div class="bg-green-50 p-2.5 rounded-xl text-center border border-green-100">
+                                    <span class="block text-[10px] font-bold text-green-500">קודקוד C (γ)</span>
+                                    <span id="sandbox-angle-c" class="text-base font-black text-green-700 math-style">60°</span>
+                                </div>
+                            </div>
+                            <div class="bg-slate-100 text-center p-2 rounded-xl text-xs font-bold math-style text-slate-700" id="sandbox-sum-formula">
+                                60° + 60° + 60° = 180° תמיד!
+                            </div>
+                        </div>
+
+                        <!-- Interactive Level Quick Jump -->
+                        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <span class="text-xs font-bold text-slate-500 block mb-2">קפיצה מהירה למשימה שפתחת:</span>
+                            <div class="grid grid-cols-5 gap-1.5" id="level-dots-grid">
+                                <!-- Dynamic dots generated here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Canvas Area (col-span-7) -->
+                    <div class="lg:col-span-7 flex flex-col items-center">
+                        <div class="w-full bg-slate-900 rounded-3xl p-4 shadow-inner relative overflow-hidden" style="height: 420px;">
+                            <!-- SVG Workspace -->
+                            <svg id="sandbox-svg" class="w-full h-full cursor-crosshair select-none" viewBox="0 0 500 360">
+                                <defs>
+                                    <pattern id="sandbox-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2a3342" stroke-width="0.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#sandbox-grid)" />
+                                
+                                <!-- Connection Lines (Triangle Sides) -->
+                                <polygon id="triangle-poly" points="250,70 120,280 380,280" fill="rgba(99, 102, 241, 0.12)" stroke="#6366f1" stroke-width="4" stroke-linejoin="round" />
+                                
+                                <!-- Draggable Nodes -->
+                                <circle id="node-a" cx="250" cy="70" r="17" fill="#ef4444" class="cursor-pointer transition-all duration-100 hover:stroke-white hover:stroke-2" />
+                                <circle id="node-b" cx="120" cy="280" r="17" fill="#3b82f6" class="cursor-pointer transition-all duration-100 hover:stroke-white hover:stroke-2" />
+                                <circle id="node-c" cx="380" cy="280" r="17" fill="#22c55e" class="cursor-pointer transition-all duration-100 hover:stroke-white hover:stroke-2" />
+
+                                <!-- Node Labels -->
+                                <text id="label-node-a" x="250" y="75" text-anchor="middle" fill="white" class="font-extrabold text-xs pointer-events-none">A</text>
+                                <text id="label-node-b" x="120" y="285" text-anchor="middle" fill="white" class="font-extrabold text-xs pointer-events-none">B</text>
+                                <text id="label-node-c" x="380" y="285" text-anchor="middle" fill="white" class="font-extrabold text-xs pointer-events-none">C</text>
+
+                                <!-- Interior Angle labels -->
+                                <text id="text-angle-a" x="250" y="110" text-anchor="middle" fill="#f87171" class="font-black math-style text-sm pointer-events-none bg-slate-900/90 py-1 rounded">α</text>
+                                <text id="text-angle-b" x="155" y="260" text-anchor="middle" fill="#60a5fa" class="font-black math-style text-sm pointer-events-none">β</text>
+                                <text id="text-angle-c" x="345" y="260" text-anchor="middle" fill="#4ade80" class="font-black math-style text-sm pointer-events-none">γ</text>
+                            </svg>
+                            <span class="absolute bottom-3 left-3 bg-slate-900/90 border border-slate-700 text-slate-300 text-xs px-2.5 py-1 rounded-lg">
+                                <i class="fa-solid fa-arrows-up-down-left-right ml-1"></i> גררו את הקודקודים הצבעוניים
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ENDLESS SPACE GAME -->
+        <section id="content-game" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-md border border-slate-100">
+                <div class="text-center max-w-xl mx-auto space-y-2 mb-6">
+                    <span class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full uppercase">מרכז אימונים חללי אינטראקטיבי</span>
+                    <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">מגרש המשחקים הקוסמי! 🚀</h2>
+                    <p class="text-slate-500 text-sm">בחרו את מצב האימון שלכם והתחרו על שיא נקודות ארצי כדי לשלוט לחלוטין בחומר.</p>
+                    
+                    <!-- Game Mode Selector -->
+                    <div class="flex justify-center gap-3 mt-4 bg-slate-100 p-1.5 rounded-xl max-w-md mx-auto">
+                        <button onclick="toggleGameMode('angles')" id="mode-btn-angles" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all bg-white text-slate-800 shadow">
+                            <i class="fa-solid fa-circle-nodes ml-1"></i> ניווט זוויות
+                        </button>
+                        <button onclick="toggleGameMode('algebra')" id="mode-btn-algebra" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-800">
+                            <i class="fa-solid fa-rocket ml-1"></i> שיגור אלגברי
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GAME BOARD CONTAINER -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- Left Panel: Game Controls and Stats -->
+                    <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+                        <div class="bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 flex justify-between items-center shadow-lg">
+                            <div class="text-center flex-1">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase tracking-wider">ציון</span>
+                                <span id="game-score" class="text-3xl font-black text-yellow-400">0</span>
+                            </div>
+                            <div class="border-l border-slate-800 h-10 mx-2"></div>
+                            <div class="text-center flex-1">
+                                <span class="text-[10px] text-slate-400 block font-bold uppercase tracking-wider">רמה</span>
+                                <span id="game-level" class="text-3xl font-black text-purple-400">1</span>
+                            </div>
+                            <div class="border-l border-slate-800 h-10 mx-2"></div>
+                            <div class="text-center flex-1 bg-rose-950/40 p-2 rounded-xl border border-rose-900/50">
+                                <span class="text-[9px] text-rose-300 block font-bold uppercase tracking-wider mb-1">מד חיים</span>
+                                <div id="game-lives" class="flex justify-center gap-1.5 text-rose-500 text-xl">
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mode 1 Panel: Angle Navigation -->
+                        <div id="game-panel-angles" class="bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white p-6 rounded-2xl shadow-xl space-y-5 border border-indigo-800/40">
+                            <div class="flex justify-between items-center">
+                                <span class="bg-indigo-800 text-indigo-200 text-[10px] font-black px-2.5 py-1 rounded-full uppercase">משימת ניווט זוויות</span>
+                                <span id="streak-badge" class="hidden bg-yellow-400 text-slate-900 text-[10px] font-black px-2 py-0.5 rounded animate-bounce">רצף חם! 🔥</span>
+                            </div>
+                            
+                            <div class="space-y-3 bg-black/40 p-4 rounded-xl text-center border border-indigo-800/30">
+                                <div class="grid grid-cols-2 gap-3 text-sm">
+                                    <div class="bg-indigo-950/60 p-3 rounded-lg border border-indigo-800/40">
+                                        <span class="block text-xs text-indigo-300 font-bold mb-0.5">זווית א' (α)</span>
+                                        <span id="game-val-a" class="text-xl font-extrabold text-yellow-300">45°</span>
+                                    </div>
+                                    <div class="bg-indigo-950/60 p-3 rounded-lg border border-indigo-800/40">
+                                        <span class="block text-xs text-indigo-300 font-bold mb-0.5">זווית ב' (β)</span>
+                                        <span id="game-val-b" class="text-xl font-extrabold text-yellow-300">75°</span>
+                                    </div>
+                                </div>
+                                <div class="mt-2 text-lg font-bold text-white flex justify-center items-center gap-1 bg-white/5 py-2 rounded-lg">
+                                    הזווית השלישית: <span class="math-style text-pink-400 font-extrabold text-2xl">γ = ?</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex gap-2">
+                                    <input type="number" id="game-answer" placeholder="הכנס זווית..." class="flex-1 px-4 py-3 rounded-xl text-slate-900 font-bold focus:outline-none focus:ring-4 focus:ring-pink-500 text-center text-lg">
+                                    <button onclick="submitGameAnswer()" class="bg-pink-600 hover:bg-pink-500 active:scale-95 text-white font-black px-6 py-3 rounded-xl transition-all shadow-lg">
+                                        שגר!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mode 2 Panel: Algebra Fuel (New Game mode) -->
+                        <div id="game-panel-algebra" class="hidden bg-gradient-to-br from-purple-900 via-purple-950 to-slate-950 text-white p-6 rounded-2xl shadow-xl space-y-5 border border-purple-800/40">
+                            <div class="flex justify-between items-center">
+                                <span class="bg-purple-800 text-purple-200 text-[10px] font-black px-2.5 py-1 rounded-full uppercase">שיגור משוואות מהיר</span>
+                                <span id="algebra-timer-lbl" class="bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-lg">זמן: 15 ש'</span>
+                            </div>
+                            
+                            <div class="space-y-3 bg-black/40 p-4 rounded-xl text-center border border-purple-800/30">
+                                <span class="text-xs text-purple-300 block font-bold mb-1">פתרו את המשוואה וקבלו דלק חללי!</span>
+                                <div id="algebra-equation-text" class="text-2xl font-black text-yellow-300 tracking-wider">3x - 5 = 10</div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex gap-2">
+                                    <input type="number" id="game-algebra-answer" placeholder="ערך x..." class="flex-1 px-4 py-3 rounded-xl text-slate-900 font-bold focus:outline-none focus:ring-4 focus:ring-purple-500 text-center text-lg">
+                                    <button onclick="submitAlgebraAnswer()" class="bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-black px-6 py-3 rounded-xl transition-all shadow-lg">
+                                        שיגור!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="game-feedback" class="hidden text-center p-3 rounded-xl font-bold text-base"></div>
+                    </div>
+
+                    <!-- Right Panel: Immersive Space SVG Visualizer -->
+                    <div class="lg:col-span-7 flex flex-col justify-center items-center bg-slate-950 rounded-3xl p-6 min-h-[380px] relative overflow-hidden shadow-2xl border border-slate-900">
+                        <!-- Space Stars Background -->
+                        <div class="absolute inset-0 opacity-40 pointer-events-none">
+                            <div class="absolute w-1 h-1 bg-white rounded-full top-1/4 left-1/4 animate-ping"></div>
+                            <div class="absolute w-1.5 h-1.5 bg-white rounded-full top-1/2 left-3/4 animate-pulse"></div>
+                            <div class="absolute w-1.5 h-1.5 bg-white rounded-full top-1/3 left-1/3 animate-pulse"></div>
+                            <div class="absolute w-1 h-1 bg-white rounded-full top-3/4 left-1/3 animate-ping"></div>
+                        </div>
+
+                        <!-- Graphical Space Engine -->
+                        <svg id="game-svg" viewBox="0 0 400 300" class="w-full max-w-[400px] h-full z-10">
+                            <!-- Visual trajectory of rocket -->
+                            <path d="M 100,240 Q 200,100 300,240" fill="none" stroke="rgba(147, 51, 234, 0.2)" stroke-width="4" stroke-dasharray="10 5" id="algebra-trajectory" class="hidden" />
+                            <polygon id="game-triangle" points="200,60 100,240 300,240" fill="none" stroke="rgba(236, 72, 153, 0.25)" stroke-width="4" stroke-dasharray="8 4" />
+                            
+                            <circle cx="100" cy="240" r="14" fill="#3b82f6" class="animate-pulse" />
+                            <circle cx="300" cy="240" r="14" fill="#10b981" class="animate-pulse" />
+                            
+                            <!-- Sun Planet (Goal) -->
+                            <circle cx="200" cy="60" r="22" fill="#eab308" class="animate-bounce" style="animation-duration: 3s;" id="game-planet-goal" />
+                            
+                            <!-- Spaceship Graphics Group -->
+                            <g id="game-spaceship" transform="translate(100, 240) rotate(35)">
+                                <path d="M 0,-18 L 12,12 L -12,12 Z" fill="#ec4899" stroke="white" stroke-width="1.5" />
+                                <circle cx="0" cy="2" r="4.5" fill="white" />
+                                <!-- Fire exhaust -->
+                                <path d="M -5,12 L 0,22 L 5,12 Z" fill="#f97316" id="spaceship-fire" class="animate-pulse" />
+                            </g>
+                        </svg>
+
+                        <!-- End Screen Overlay -->
+                        <div id="game-overlay" class="absolute inset-0 bg-slate-950/95 z-20 flex flex-col justify-center items-center text-center p-6 hidden">
+                            <div id="overlay-icon" class="text-6xl text-yellow-400 mb-4 animate-bounce">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <h3 id="overlay-title" class="text-2xl font-extrabold text-white">המשימה הושלמה!</h3>
+                            <p id="overlay-desc" class="text-slate-300 max-w-sm mt-2 text-sm"></p>
+                            <button onclick="restartGame()" class="mt-6 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold px-6 py-3 rounded-xl transition-all shadow-md">שחק שוב</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: THE ULTIMATE MIFMAR EXAM (50 QUESTIONS!) -->
+        <section id="content-exam" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-100">
+                <!-- Exam Welcome View -->
+                <div id="exam-welcome-view" class="text-center max-w-2xl mx-auto space-y-6 py-8">
+                    <span class="bg-amber-100 text-amber-900 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">סימולציית מפמ"ר רשמית</span>
+                    <h2 class="text-4xl font-black text-slate-950">בחינת הסימולציה הגדולה - 50 שאלות</h2>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        הבחינה מדמה באופן מלא את המבחן הממשלתי הארצי לכיתה ז'. 
+                        השאלות מחולקות באופן שווה בין כל תחומי הלימוד המבוקשים: אלגברה, מספרים מכוונים, הנדסה וזוויות, מלבן ומשולש, ומערכת צירים.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-200/80 text-right">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-indigo-100 text-indigo-700 w-10 h-10 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-clipboard-question"></i></span>
+                            <div>
+                                <p class="text-xs text-slate-500">מספר שאלות</p>
+                                <p class="text-sm font-bold">50 שאלות אמת</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="bg-purple-100 text-purple-700 w-10 h-10 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-clock"></i></span>
+                            <div>
+                                <p class="text-xs text-slate-500">זמן מומלץ</p>
+                                <p class="text-sm font-bold">90 דקות (ללא הגבלה)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="bg-emerald-100 text-emerald-700 w-10 h-10 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-star"></i></span>
+                            <div>
+                                <p class="text-xs text-slate-500">טווח ציון</p>
+                                <p class="text-sm font-bold">בין 0 ל-100 נקודות</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="startOfficialExam()" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-black px-8 py-4 rounded-2xl text-lg hover:from-indigo-500 hover:to-purple-500 transition-all shadow-lg scale-100 active:scale-95">
+                        <i class="fa-solid fa-play ml-2"></i> התחל בחינה כעת
+                    </button>
+                </div>
+
+                <!-- Active Exam View -->
+                <div id="exam-active-view" class="hidden space-y-6">
+                    <!-- Exam Header Bar -->
+                    <div class="flex flex-col md:flex-row justify-between items-center bg-slate-900 text-white p-4 rounded-2xl gap-3 shadow-md">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-yellow-400 text-slate-950 font-black px-2.5 py-1 rounded text-xs">בחינה בפועל</span>
+                            <span class="text-sm font-bold text-slate-300" id="exam-progress-text">שאלה 1 מתוך 50</span>
+                        </div>
+                        <!-- Timer -->
+                        <div class="flex items-center gap-2 text-yellow-300 font-mono font-bold" id="exam-timer">
+                            <i class="fa-regular fa-clock"></i> 00:00:00
+                        </div>
+                    </div>
+
+                    <!-- Exam Main Layout -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        
+                        <!-- Left Sidebar: Questions Grid (Quick navigation) (col-span-4) -->
+                        <div class="lg:col-span-4 space-y-4">
+                            <div class="bg-slate-50 p-4 rounded-2xl border">
+                                <span class="text-xs font-black text-slate-600 block mb-3 uppercase tracking-wider">מפת השאלות (50)</span>
+                                <div class="grid grid-cols-5 sm:grid-cols-10 lg:grid-cols-5 gap-1.5" id="exam-grid-map">
+                                    <!-- Automatically generated 50 dots -->
+                                </div>
+                            </div>
+                            
+                            <!-- Submit Block -->
+                            <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-center space-y-3">
+                                <p class="text-xs text-amber-800 font-medium">סיימתם לענות על כל השאלות? שלחו את הבחינה לבדיקה מיידית וקבלו את הציון שלכם.</p>
+                                <button onclick="submitExamForGrading()" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-2.5 rounded-xl transition-all shadow text-sm">
+                                    <i class="fa-solid fa-paper-plane ml-1"></i> הגש בחינה לבדיקה
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Content: The Active Question Display (col-span-8) -->
+                        <div class="lg:col-span-8 bg-slate-50/50 p-6 rounded-2xl border space-y-6">
+                            <div class="space-y-2">
+                                <span class="bg-indigo-100 text-indigo-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase" id="active-question-topic">אלגברה</span>
+                                <h3 class="text-lg md:text-xl font-bold text-slate-900 leading-relaxed" id="active-question-text">שאלה</h3>
+                            </div>
+
+                            <!-- Options Block -->
+                            <div class="grid grid-cols-1 gap-3" id="active-question-options-container">
+                                <!-- Dynamic options generated here -->
+                            </div>
+
+                            <!-- Nav control buttons -->
+                            <div class="flex justify-between items-center pt-4 border-t">
+                                <button onclick="navigateExamQuestion('prev')" id="exam-prev-btn" class="bg-white hover:bg-slate-100 border text-slate-700 px-5 py-2.5 rounded-xl font-bold text-sm transition-all flex items-center gap-1.5">
+                                    <i class="fa-solid fa-arrow-right"></i> שאלה הקודמת
+                                </button>
+                                <button onclick="navigateExamQuestion('next')" id="exam-next-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all flex items-center gap-1.5">
+                                    שאלה הבאה <i class="fa-solid fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Exam Report / Result View -->
+                <div id="exam-result-view" class="hidden max-w-4xl mx-auto space-y-8 py-6">
+                    <div class="text-center space-y-4">
+                        <div class="w-24 h-24 mx-auto bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-4xl shadow-inner font-black animate-bounce" id="result-score-circle">
+                            92
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-900" id="result-title">סיכום ציון המפמ"ר שלך!</h2>
+                        <p class="text-slate-500 max-w-md mx-auto text-sm" id="result-desc">עבודה מעולה! הנה דוח מפורט של כל השאלות והתשובות כדי שתוכל ללמוד מטעויות ולהגיע ל-100% הצלחה במבחן האמיתי.</p>
+                        <button onclick="switchTab('exam'); restartExamSystem();" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition-all shadow">
+                            בצע סימולציה חדשה
+                        </button>
+                    </div>
+
+                    <!-- List of Wrong Questions with clean corrections -->
+                    <div class="space-y-4">
+                        <h3 class="font-extrabold text-lg text-slate-800 border-b pb-2"><i class="fa-solid fa-list-check ml-2 text-indigo-600"></i>סקירה מפורטת של הבחינה:</h3>
+                        <div class="space-y-4" id="exam-feedback-list-container">
+                            <!-- Dynamic report injected here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-6 border-t border-slate-800 mt-12 text-center text-xs">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-slate-300">הכנה ממוקדת לרמת הקבצה א'1 - חטיבת הביניים</p>
+            <p>© כל הזכויות שמורות - מערכת מכינת המפמ"ר הארצית</p>
+        </div>
+    </footer>
+
+    <!-- Logic Controller Scripts -->
+    <script>
+        // Tab Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(element => {
+                element.classList.add('hidden');
+            });
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all text-white hover:bg-white/10";
+            });
+            const activeTab = document.getElementById(`tab-${tabId}`);
+            if (activeTab) {
+                if (tabId === 'exam') {
+                    activeTab.className = "tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all bg-yellow-400 text-slate-900 shadow";
+                } else {
+                    activeTab.className = "tab-btn px-4 py-2 rounded-lg font-bold text-xs md:text-sm transition-all bg-white text-indigo-700 shadow";
+                }
+            }
+
+            if (tabId === 'sandbox') {
+                setTimeout(updateSandbox, 50);
+            }
+            if (tabId === 'game') {
+                setTimeout(startScenario, 50);
+            }
+            if (tabId === 'mifmar') {
+                showTopicContent(1);
+            }
+        }
+
+        // ==========================================
+        // TOPICS CONTENT GENERATOR (15 Detailed Chapters with Multi-puzzles)
+        // ==========================================
+        const topicsDatabase = {
+            1: {
+                title: "מספרים חיוביים, שליליים ואפס",
+                desc: "הבנת מושג המספר המכוון והתפלגות המספרים משני צידי האפס.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">מבוא למספרים מכוונים</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                בחיי היומיום אנו נתקלים במצבים שבהם מספרים חיוביים אינם מספיקים לתיאור המציאות. ברמת הקבצה א'1 אנו מגדירים את קבוצת המספרים המכוונים הכוללת מספרים חיוביים, מספרים שליליים ואת המספר אפס. <br>
+                                <strong>הערך המוחלט</strong> של מספר (המסומן ב- |x|) הוא מרחקו של המספר מנקודת האפס. המרחק הוא תמיד ערך אי-שלילי. למשל: |-7| = 7 ו- |7| = 7.
+                            </p>
+
+                            <!-- Graphic Infographic -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6">
+                                <h5 class="font-bold text-xs text-slate-500 mb-3 uppercase">חלוקת המספרים המכוונים</h5>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-xs">
+                                    <div class="bg-emerald-100/50 p-4 rounded-xl border border-emerald-200">
+                                        <div class="text-lg font-bold text-emerald-700">חיוביים (+)</div>
+                                        <p class="text-slate-600 mt-1">גדולים מ-0. ככל שמתרחקים מהאפס ימינה, ערכם גדל.</p>
+                                        <div class="mt-2 font-mono font-bold text-emerald-800">דוגמה: +4, 7.2, 100</div>
+                                    </div>
+                                    <div class="bg-indigo-100/50 p-4 rounded-xl border border-indigo-200">
+                                        <div class="text-lg font-bold text-indigo-700">אפס (0)</div>
+                                        <p class="text-slate-600 mt-1">נקודה ניטרלית. אינו חיובי ואינו שלילי.</p>
+                                        <div class="mt-2 font-mono font-bold text-indigo-800">הגבול הניטרלי</div>
+                                    </div>
+                                    <div class="bg-rose-100/50 p-4 rounded-xl border border-rose-200">
+                                        <div class="text-lg font-bold text-rose-700">שליליים (-)</div>
+                                        <p class="text-slate-600 mt-1">קטנים מ-0. ככל שמתרחקים מהאפס שמאלה, ערכם קטן.</p>
+                                        <div class="mt-2 font-mono font-bold text-rose-800">דוגמה: -3, -5.5, -90</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים להבנה מלאה
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: האם המספר -12 גדול או קטן מהמספר -15?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(1, 1, true, 'במספרים שליליים, ככל שהערך המוחלט קטן יותר - המספר גדול יותר כי הוא קרוב יותר לאפס. לכן -12 גדול מ- -15!')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-12 &gt; -15</button>
+                                        <button onclick="checkPuzzleFeedback(1, 1, false, '-12 קרוב יותר לאפס מאשר -15, לכן הוא גדול יותר!')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-12 &lt; -15</button>
+                                    </div>
+                                    <div id="puzzle-feedback-1-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: פתרו את הביטוי הבא: |-10| + |5| - |-2|</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(1, 2, false, 'חשבו את הערכים המוחלטים תחילה: |-10|=10, |5|=5, |-2|=2.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">17</button>
+                                        <button onclick="checkPuzzleFeedback(1, 2, true, 'נכון מאוד! 10 + 5 - 2 = 13. ערך מוחלט הופך כל איבר בפנים לחיובי לפני הפעולות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">13</button>
+                                    </div>
+                                    <div id="puzzle-feedback-1-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: מצאו את קבוצת האמת של המשוואה |x| = 8</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(1, 3, true, 'נכון מאוד! לשני המספרים 8 ו- -8 יש מרחק של בדיוק 8 יחידות מהאפס.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 8 או x = -8</button>
+                                        <button onclick="checkPuzzleFeedback(1, 3, false, 'זכרו שגם למספר שלילי בתוך ערך מוחלט יש תוצאה חיובית.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 8 בלבד</button>
+                                    </div>
+                                    <div id="puzzle-feedback-1-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            2: {
+                title: "ציר המספרים ומספרים נגדיים",
+                desc: "ייצוג חזותי של מערכת המספרים והבנת מושג המרחק הדו-צדדי.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">ציר המספרים והמספר הנגדי</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                ציר המספרים הוא ישר שבו אנו מסמנים את נקודת האפס (ראשית הציר), כיוון חיובי (ימינה, מסומן בחץ) ויחידת מידה קבועה. <br>
+                                <strong>מספרים נגדיים</strong> הם שני מספרים בעלי מרחק שווה מראשית הציר (אפס), אך בכיוונים מנוגדים. אם נתון מספר a, הנגדי שלו הוא -a. סכומם של שני מספרים נגדיים הוא תמיד 0: a + (-a) = 0.
+                            </p>
+
+                            <!-- Live Interactive Slider widget -->
+                            <div class="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100 space-y-3 mb-6">
+                                <div class="flex justify-between text-xs font-bold text-slate-700">
+                                    <span>המספר שבחרת: <span id="num-slider-lbl" class="text-indigo-600 text-sm font-black">+3</span></span>
+                                    <span>הנגדי שלו: <span id="num-slider-opp" class="text-pink-600 text-sm font-black">-3</span></span>
+                                </div>
+                                <input type="range" id="numbers-topic-slider" min="-10" max="10" value="3" oninput="updateTopicNumberLine()" class="w-full accent-indigo-600 cursor-pointer">
+                                <div class="bg-white p-3 rounded-lg border shadow-inner flex justify-center overflow-x-auto">
+                                    <svg id="topic-numline-svg" viewBox="0 0 500 60" class="w-full min-w-[450px] h-[60px]"></svg>
+                                </div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: מהו המספר הנגדי של -(-7)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(2, 1, false, 'ראשית פשטו את הביטוי: -(-7) = 7. עכשיו מצאו את הנגדי של 7.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">7</button>
+                                        <button onclick="checkPuzzleFeedback(2, 1, true, 'מצוין! -(-7) = 7, והמספר הנגדי של 7 הוא -7.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-7</button>
+                                    </div>
+                                    <div id="puzzle-feedback-2-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: המרחק בין מספר x לבין הנגדי שלו הוא 18 יחידות. מהו המספר החיובי מביניהם?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(2, 2, true, 'נכון מאוד! אם המרחק הכולל הוא 18, כל אחד מהם נמצא במרחק 9 מהאפס. המספרים הם 9 ו- -9.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">9</button>
+                                        <button onclick="checkPuzzleFeedback(2, 2, false, 'אם המרחק הוא 18, המרחק של כל אחד מהם מהאפס הוא בדיוק חצי מזה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">18</button>
+                                    </div>
+                                    <div id="puzzle-feedback-2-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: פתרו את המשוואה: x + (-x) = 0</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(2, 3, true, 'מדויק! חוק הנגדיים מתקיים עבור כל מספר שהוא, כולל אפס ושברים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">נכון לכל מספר x</button>
+                                        <button onclick="checkPuzzleFeedback(2, 3, false, 'האם יש מספר שעבורו חיבור שלו ושל הנגדי שלו לא ייתן אפס?')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 0  בלבד</button>
+                                    </div>
+                                    <div id="puzzle-feedback-2-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            3: {
+                title: "כפל וחילוק מספרים מכוונים",
+                desc: "חוקי הסימנים, כפל שרשרת וחילוק שברים מכוונים.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">חוקי הסימנים בכפל וחילוק</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                כפל וחילוק של מספרים מכוונים מבוסס על מספר הגורמים השליליים בתרגיל: <br>
+                                • מספר **זוגי** של גורמים שליליים ← תוצאה **חיובית (+)**.<br>
+                                • מספר **אי-זוגי** של גורמים שליליים ← תוצאה **שלילית (-)**.
+                            </p>
+
+                            <!-- Infographic Table -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 overflow-x-auto">
+                                <table class="w-full text-xs text-center border-collapse">
+                                    <thead>
+                                        <tr class="bg-indigo-100 text-indigo-900 font-bold">
+                                            <th class="p-2 border">גורם א'</th>
+                                            <th class="p-2 border">פעולה</th>
+                                            <th class="p-2 border">גורם ב'</th>
+                                            <th class="p-2 border">סימן התוצאה</th>
+                                            <th class="p-2 border">דוגמה</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-2 border font-bold text-emerald-600">חיובי (+)</td>
+                                            <td class="p-2 border">כפול / חלקי</td>
+                                            <td class="p-2 border font-bold text-emerald-600">חיובי (+)</td>
+                                            <td class="p-2 border font-bold text-emerald-700">חיובי (+)</td>
+                                            <td class="p-2 border font-mono">5 × 4 = 20</td>
+                                        </tr>
+                                        <tr class="bg-slate-100">
+                                            <td class="p-2 border font-bold text-rose-600">שלילי (-)</td>
+                                            <td class="p-2 border">כפול / חלקי</td>
+                                            <td class="p-2 border font-bold text-rose-600">שלילי (-)</td>
+                                            <td class="p-2 border font-bold text-emerald-700">חיובי (+)</td>
+                                            <td class="p-2 border font-mono">(-3) × (-4) = 12</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-2 border font-bold text-emerald-600">חיובי (+)</td>
+                                            <td class="p-2 border">כפול / חלקי</td>
+                                            <td class="p-2 border font-bold text-rose-600">שלילי (-)</td>
+                                            <td class="p-2 border font-bold text-rose-700">שלילי (-)</td>
+                                            <td class="p-2 border font-mono">6 × (-2) = -12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Interactive Calculation Box -->
+                            <div class="bg-indigo-50 p-4 rounded-xl border mb-6">
+                                <h5 class="text-xs font-black text-slate-500 uppercase mb-2">מחשבון סימנים אינטראקטיבי</h5>
+                                <div class="flex items-center gap-2">
+                                    <input type="number" id="op-num1" value="-6" class="w-16 p-2 text-center border rounded font-black text-slate-800">
+                                    <select id="op-select" class="p-2 border rounded font-bold text-slate-800">
+                                        <option value="mul">×</option>
+                                        <option value="div">÷</option>
+                                    </select>
+                                    <input type="number" id="op-num2" value="3" class="w-16 p-2 text-center border rounded font-black text-slate-800">
+                                    <button onclick="calculateTopicOps()" class="bg-indigo-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-indigo-500">חשב</button>
+                                </div>
+                                <div id="op-calc-res" class="bg-white p-2.5 rounded border font-bold text-indigo-950 mt-2 hidden"></div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: מהו הסימן של תוצאת המכפלה הבאה: (-1) × (-2) × (-3) × (-4) × (-5)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(3, 1, true, 'נכון מאוד! יש לנו 5 גורמים שליליים (מספר אי-זוגי), ולכן התוצאה היא שלילית (-120).')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">שלילי (-)</button>
+                                        <button onclick="checkPuzzleFeedback(3, 1, false, 'ספרו את כמות סימני המינוס בתרגיל. האם היא זוגית או אי-זוגית?')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">חיובי (+)</button>
+                                    </div>
+                                    <div id="puzzle-feedback-3-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: מהי תוצאת התרגיל: (-36) ÷ (-4) ÷ (-3)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(3, 2, false, 'בצעו משמאל לימין: (-36) ÷ (-4) = 9. כעת פתרו 9 ÷ (-3).')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">3</button>
+                                        <button onclick="checkPuzzleFeedback(3, 2, true, 'מעולה! (-36) ÷ (-4) = 9, ואז 9 ÷ (-3) = -3.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-3</button>
+                                    </div>
+                                    <div id="puzzle-feedback-3-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: מצאו את ערך הביטוי: (-2) בחזקת 4</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(3, 3, true, 'מצוין! חזקה זוגית על מספר שלילי בסוגריים הופכת אותו לחיובי: (-2) × (-2) × (-2) × (-2) = 16.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">16</button>
+                                        <button onclick="checkPuzzleFeedback(3, 3, false, 'שימו לב שהחזקה היא זוגית (4) והבסיס נמצא בסוגריים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-16</button>
+                                    </div>
+                                    <div id="puzzle-feedback-3-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            4: {
+                title: "משתנים וביטויים אלגבריים",
+                desc: "פישוט ביטויים, כינוס איברים דומים והצבה במשתנים.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">משתנים, מקדמים ופישוט אלגברי</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                ביטוי אלגברי הוא שילוב של מספרים, משתנים ופעולות חשבון. ברמת הקבצה א'1 אנו שמים דגש מיוחד על פתיחת סוגריים באמצעות <strong>חוק הפילוג</strong>: a(b + c) = ab + ac, ועל חוק הפילוג המורחב: (a + b)(c + d) = ac + ad + bc + bd.
+                            </p>
+
+                            <!-- Infographic Steps -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6">
+                                <h5 class="font-bold text-xs text-slate-500 mb-3 uppercase">שלבי פישוט ביטוי אלגברי מורכב</h5>
+                                <div class="space-y-3 text-xs">
+                                    <div class="flex items-center gap-3">
+                                        <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold">1</span>
+                                        <p><strong>פתיחת סוגריים:</strong> כופלים את הגורם מחוץ לסוגריים בכל אחד מהאיברים בפנים (זהירות עם סימני מינוס!).</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold">2</span>
+                                        <p><strong>כינוס איברים דומים:</strong> מחברים או מחסירים מקדמים של משתנים זהים (למשל, 3x - 5x = -2x) ומספרים חופשיים בנפרד.</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center font-bold">3</span>
+                                        <p><strong>תוצאה סופית:</strong> כותבים את הביטוי בצורתו המצומצמת ביותר.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: פשטו את הביטוי: -4(x - 3) + 3x</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(4, 1, true, 'נכון מאוד! פתיחת סוגריים נותנת -4x + 12. חיבור עם 3x נותן -x + 12.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-x + 12</button>
+                                        <button onclick="checkPuzzleFeedback(4, 1, false, 'זכרו שמינוס כפול מינוס נותן פלוס: -4 × (-3) = 12.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">-x - 12</button>
+                                    </div>
+                                    <div id="puzzle-feedback-4-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: הציבו a = -2, b = 3 בביטוי 3a² - 2b</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(4, 2, false, 'חשבו קודם את החזקה: a² = (-2)² = 4. כעת הציבו בשאר התרגיל.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">6-</button>
+                                        <button onclick="checkPuzzleFeedback(4, 2, true, 'מעולה! 3 × (-2)² - 2 × 3 = 3 × 4 - 6 = 12 - 6 = 6.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">6</button>
+                                    </div>
+                                    <div id="puzzle-feedback-4-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: פשטו את הביטוי הבא: (x + 2)(x - 5)</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(4, 3, true, 'נכון מאוד! לפי חוק הפילוג המורחב: x² - 5x + 2x - 10 = x² - 3x - 10.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x² - 3x - 10</button>
+                                        <button onclick="checkPuzzleFeedback(4, 3, false, 'כפלו לפי חוק הפילוג המורחב וכנסו איברים דומים באמצע.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x² - 7x - 10</button>
+                                    </div>
+                                    <div id="puzzle-feedback-4-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            5: {
+                title: "חוקיות וסדרות",
+                desc: "מציאת חוקיות בסדרות מספרים וייצוג האיבר הכללי n.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">חקירת סדרות והאיבר הכללי</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                סדרה היא קבוצה של מספרים המסודרים לפי חוקיות מסוימת. המשתנה n מייצג את מספר המקום של האיבר בסדרה (אינדקס, תמיד מספר שלם חיובי). הנוסחה לאיבר הכללי מאפשרת למצוא כל איבר בסדרה ללא צורך בחישוב כל האיברים הקודמים.
+                            </p>
+
+                            <!-- Visual Representation -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 text-xs space-y-2">
+                                <h5 class="font-bold text-xs text-slate-500 uppercase">ניתוח סדרה עם הפרש קבוע</h5>
+                                <div class="flex justify-around items-center bg-white p-3 rounded-lg border">
+                                    <div>
+                                        <span class="block text-slate-400">מקום (n)</span>
+                                        <span class="font-bold text-sm">1 , 2 , 3 , 4</span>
+                                    </div>
+                                    <div class="text-indigo-600 font-extrabold text-lg">←</div>
+                                    <div>
+                                        <span class="block text-slate-400">איבר</span>
+                                        <span class="font-bold text-sm text-indigo-700">5 , 8 , 11 , 14</span>
+                                    </div>
+                                </div>
+                                <p class="text-slate-500 text-[11px] mt-1">ההפרש הקבוע הוא 3. לכן החוקיות היא 3n + 2 (מציבים n = 1 ומקבלים 3 × 1 + 2 = 5).</p>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: מצאו את האיבר הבא בסדרה: 7, 12, 17, 22...</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(5, 1, true, 'מעולה! ההפרש הקבוע הוא 5, לכן האיבר הבא הוא 22 + 5 = 27.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">27</button>
+                                        <button onclick="checkPuzzleFeedback(5, 1, false, 'בדקו את ההפרש בין האיברים העוקבים בסדרה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">26</button>
+                                    </div>
+                                    <div id="puzzle-feedback-5-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: מהי נוסחת האיבר הכללי של הסדרה: 2, 5, 8, 11...?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(5, 2, false, 'ההפרש הקבוע הוא 3. לכן הביטוי מתחיל ב-3n. כעת בדקו מה צריך להוסיף או להחסיר עבור n=1.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">3n + 1</button>
+                                        <button onclick="checkPuzzleFeedback(5, 2, true, 'נכון מאוד! ההפרש הוא 3, ועבור n=1 אנו מקבלים 3 × 1 - 1 = 2. החוקיות היא 3n - 1.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">3n - 1</button>
+                                    </div>
+                                    <div id="puzzle-feedback-5-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: בסדרה שחוקיותה 6n - 4, באיזה מקום (n) נמצא האיבר שערכו 116?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(5, 3, true, 'מצוין! נפתור את המשוואה: 6n - 4 = 116  שזה  6n = 120  ומכאן  n = 20. האיבר נמצא במקום ה-20!')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">מקום 20</button>
+                                        <button onclick="checkPuzzleFeedback(5, 3, false, 'השוו את הביטוי 6n-4 ל-116 ופתרו את המשוואה עבור n.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">מקום 18</button>
+                                    </div>
+                                    <div id="puzzle-feedback-5-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            6: {
+                title: "משוואות ממעלה ראשונה בנעלם אחד",
+                desc: "שיטות מתקדמות לפתרון משוואות כולל פתיחת סוגריים ומכנים.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">פתרון משוואות אלגבריות מורכבות</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                משוואה היא שוויון בין שני ביטויים אלגבריים. פתרון המשוואה הוא הערך של הנעלם x שהצבתו במשוואה יוצרת פסוק אמת. ברמת א'1 אנו פותרים משוואות עם סוגריים מרובים ומכנים מספריים.
+                            </p>
+
+                            <!-- Infographic Equation Balance -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6">
+                                <h5 class="font-bold text-xs text-slate-500 mb-2 uppercase">עקרון מאזני השוויון</h5>
+                                <p class="text-xs text-slate-600 mb-3">כל פעולה שנבצע באגף אחד (חיבור, חיסור, כפל או חילוק) - חובה לבצע בדיוק גם באגף השני כדי לשמור על השוויון!</p>
+                                <div class="bg-white p-3 rounded-lg border text-center font-mono text-xs text-indigo-800 space-y-1">
+                                    <p class="font-bold">x/3 + 2 = 7</p>
+                                    <p class="text-slate-400">נחסיר 2 משני האגפים:</p>
+                                    <p class="font-bold">x/3 = 5</p>
+                                    <p class="text-slate-400">נכפיל את שני האגפים ב-3:</p>
+                                    <p class="font-bold text-emerald-600">x = 15</p>
+                                </div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: פתרו את המשוואה: 5x - 7 = 3x + 9</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(6, 1, true, 'נכון מאוד! נחסיר 3x ונוסיף 7 משני האגפים: 2x = 16  שממנו נובע  x = 8.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 8</button>
+                                        <button onclick="checkPuzzleFeedback(6, 1, false, 'העבירו את כל ה-x-ים לאגף אחד ואת כל המספרים החופשיים לאגף השני.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 4</button>
+                                    </div>
+                                    <div id="puzzle-feedback-6-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: פתרו את המשוואה: 2(x - 3) = -4</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(6, 2, false, 'פתחו סוגריים: 2x - 6 = -4. כעת העבירו אגפים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = -1</button>
+                                        <button onclick="checkPuzzleFeedback(6, 2, true, 'מצוין! 2x - 6 = -4  שזה  2x = 2  ולכן  x = 1.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 1</button>
+                                    </div>
+                                    <div id="puzzle-feedback-6-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: פתרו את המשוואה עם המכנה: x/4 + x/3 = 7</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(6, 3, true, 'כל הכבוד! נכפיל את כל המשוואה במכנה משותף 12: 3x + 4x = 84  שממנו מקבלים  7x = 84  ולכן  x = 12.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 12</button>
+                                        <button onclick="checkPuzzleFeedback(6, 3, false, 'מצאו מכנה משותף מינימלי עבור 3 ו-4, והכפילו בו את כל איברי המשוואה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x = 7</button>
+                                    </div>
+                                    <div id="puzzle-feedback-6-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            7: {
+                title: "שאלות מילוליות מורכבות",
+                desc: "תרגום בעיות מציאותיות ובעיות גילים או מספרים למשוואות מדויקות.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">בעיות מילוליות (גילים, קניות ומספרים)</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                המפתח להצלחה בפתרון בעיות מילוליות הוא תרגום שיטתי של הטקסט העברי לשפה אלגברית. מומלץ להגדיר את הגורם הקטן ביותר בתור x, ולבטא את שאר הגורמים באמצעותו.
+                            </p>
+
+                            <!-- Step-by-Step Info Table -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6">
+                                <h5 class="font-bold text-xs text-slate-500 mb-3 uppercase">טבלת תרגום משפה מילולית למתמטית</h5>
+                                <div class="grid grid-cols-2 gap-4 text-xs">
+                                    <div class="bg-white p-2.5 rounded border">
+                                        <span class="block text-[11px] text-slate-400">ביטוי מילולי</span>
+                                        <span class="font-bold text-slate-800">"גדול פי 4" / "קטן פי 2"</span>
+                                        <span class="block text-indigo-600 font-mono font-bold mt-1">כפל: 4x / חילוק: x/2</span>
+                                    </div>
+                                    <div class="bg-white p-2.5 rounded border">
+                                        <span class="block text-[11px] text-slate-400">ביטוי מילולי</span>
+                                        <span class="font-bold text-slate-800">"גדול ב-5" / "קטן ב-3"</span>
+                                        <span class="block text-indigo-600 font-mono font-bold mt-1">חיבור: x + 5 / חיסור: x - 3</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: גיל האם גדול פי 3 מגיל הבת. בעוד 5 שנים, סכום הגילים שלהן יהיה 50. מהי המשוואה המתאימה למציאת גיל הבת (x)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(7, 1, true, 'נכון מאוד! גיל הבת היום הוא x, האם 3x. בעוד 5 שנים הבת תהיה x + 5 והאם 3x + 5. סכומן: x + 5 + 3x + 5 = 4x + 10 = 50.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x + 3x + 10 = 50</button>
+                                        <button onclick="checkPuzzleFeedback(7, 1, false, 'זכרו להוסיף 5 שנים גם לבת וגם לאם (סה\"כ תוספת של 10 שנים לסכום).')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">x + 3x + 5 = 50</button>
+                                    </div>
+                                    <div id="puzzle-feedback-7-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: סכום של שלושה מספרים שלמים עוקבים הוא 45. מהו המספר האמצעי מביניהם?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(7, 2, false, 'נסמן את המספרים כ-x, x+1, x+2. פתרו את המשוואה עבור x.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">14</button>
+                                        <button onclick="checkPuzzleFeedback(7, 2, true, 'מעולה! המשוואה היא 3x + 3 = 45  שזה  3x = 42  ומכאן  x = 14. המספרים העוקבים הם 14, 15, 16. האמצעי הוא 15.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">15</button>
+                                    </div>
+                                    <div id="puzzle-feedback-7-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: מחיר ספר גבוה ב-30 ש\"ח ממחיר מחברת. דני קנה 3 ספרים ו-5 מחברות ושילם סך הכל 170 ש\"ח. מהו מחיר המחברת?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(7, 3, true, 'כל הכבוד! נסמן מחברת ב-x וספר ב-x+30. המשוואה: 3(x+30) + 5x = 170  שממנה נובע  8x + 90 = 170  ומכאן  8x = 80  ולכן  x = 10. מחיר המחברת הוא 10 ש\"ח.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">10 שקלים</button>
+                                        <button onclick="checkPuzzleFeedback(7, 3, false, 'בנו את המשוואה: 3(x+30) + 5x = 170 ופתרו עבור x.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">20 שקלים</button>
+                                    </div>
+                                    <div id="puzzle-feedback-7-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            8: {
+                title: "מבוא לזוויות וסימונים",
+                desc: "הגדרת זווית, סימון קודקודים, וסוגי זוויות (חדה, ישרה, קהה, שטוחה).",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">יסודות הזוויות ודרכי סימון</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                זווית נוצרת משתי קרניים היוצאות מנקודה משותפת הנקראת <strong>קודקוד הזווית</strong>. אנו מסמנים זוויות בשלוש אותיות גדולות באנגלית, כאשר האות של הקודקוד נמצאת תמיד באמצע (למשל, בזווית ABC הקודקוד הוא B).
+                            </p>
+
+                            <!-- SVG Angle Infographic -->
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex justify-center mb-6">
+                                <svg width="220" height="120" viewBox="0 0 220 120">
+                                    <path d="M 30,100 L 120,50 L 200,100" fill="none" stroke="#818cf8" stroke-width="4" stroke-linecap="round" />
+                                    <circle cx="120" cy="50" r="6" fill="#fbbf24" />
+                                    <text x="120" y="35" fill="white" font-size="12" font-weight="bold" text-anchor="middle">B (קודקוד)</text>
+                                    <text x="20" y="115" fill="white" font-size="12">A</text>
+                                    <text x="210" y="115" fill="white" font-size="12">C</text>
+                                    <path d="M 105,92 A 30,30 0 0 1 135,92" fill="none" stroke="#f43f5e" stroke-width="2" />
+                                    <text x="120" y="80" fill="#f43f5e" font-size="11" font-weight="bold" text-anchor="middle">זווית (α)</text>
+                                </svg>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: כיצד נגדיר זווית שגודלה הוא בדיוק 91 מעלות?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(8, 1, true, 'נכון! כל זווית הגדולה מ-90 מעלות וקטנה מ-180 מעלות היא זווית קהה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">זווית קהה</button>
+                                        <button onclick="checkPuzzleFeedback(8, 1, false, 'זווית ישרה חייבת להיות בדיוק 90 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">זווית ישרה</button>
+                                    </div>
+                                    <div id="puzzle-feedback-8-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: בסימון הזווית KMN, איזו אות מייצגת את קודקוד הזווית המשותף?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(8, 2, false, 'הקודקוד תמיד מיוצג על ידי האות שנמצאת במרכז הסימון.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">K</button>
+                                        <button onclick="checkPuzzleFeedback(8, 2, true, 'נכון מאוד! האות האמצעית M מייצגת את קודקוד הזווית.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">M</button>
+                                    </div>
+                                    <div id="puzzle-feedback-8-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: מהו שמה של זווית השווה בדיוק ל-180 מעלות?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(8, 3, true, 'מצוין! זווית שגודלה 180 מעלות נראית כמו קו ישר אחד ארוך ונקראת זווית שטוחה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">זווית שטוחה</button>
+                                        <button onclick="checkPuzzleFeedback(8, 3, false, 'זווית מלאה שווה ל-360 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">זווית מלאה</button>
+                                    </div>
+                                    <div id="puzzle-feedback-8-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            9: {
+                title: "זוויות צמודות ותכונותיהן",
+                desc: "תכונות של זוויות הנשענות יחד על ישר אחד ומשלימות ל-180 מעלות.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">משפט הזוויות הצמודות</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                זוויות צמודות הן שתי זוויות שיש להן שוק משותפת, והשוקיים האחרות שלהן יוצרות קו ישר אחד ארוך. <br>
+                                מכיוון שהן נשענות על קו ישר (שהוא זווית שטוחה), <strong>סכום זוויות צמודות שווה תמיד ל-180 מעלות</strong>.
+                            </p>
+
+                            <!-- Visual Representation -->
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-6 flex flex-col items-center">
+                                <svg width="240" height="100" viewBox="0 0 240 100">
+                                    <line x1="20" y1="80" x2="220" y2="80" stroke="#475569" stroke-width="3" />
+                                    <line x1="120" y1="80" x2="170" y2="20" stroke="#4f46e5" stroke-width="3" />
+                                    <text x="70" y="75" fill="#4f46e5" font-size="11" font-weight="bold">120°</text>
+                                    <text x="160" y="75" fill="#ec4899" font-size="11" font-weight="bold">60°</text>
+                                    <circle cx="120" cy="80" r="4" fill="black" />
+                                </svg>
+                                <span class="text-[11px] text-slate-500 font-bold mt-2">סכום: 120 מעלות + 60 מעלות = 180 מעלות</span>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: אם אחת משתי זוויות צמודות שווה ל-45 מעלות, מה גודלה של הזווית הצמודה לה?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(9, 1, true, 'נכון מאוד! 180 - 45 = 135 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">135 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(9, 1, false, 'זכרו שזוויות צמודות תמיד משלימות ל-180 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">45 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-9-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: נתון כי זווית אחת גדולה פי 4 מהזווית הצמודה לה. מהו גודלה של הזווית הקטנה?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(9, 2, true, 'מצוין! נבנה משוואה: x + 4x = 180  שזה  5x = 180  ולכן  x = 36. הזווית הקטנה היא 36 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">36 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(9, 2, false, 'בנו את המשוואה: x + 4x = 180 ופתרו עבור x.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">45 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-9-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: האם שתי זוויות חדות יכולות להיות צמודות?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(9, 3, false, 'חשבו על כך: זווית חדה קטנה מ-90 מעלות. אם נחבר שתי זוויות כאלה, האם נגיע ל-180 מעלות?')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">כן, בהחלט</button>
+                                        <button onclick="checkPuzzleFeedback(9, 3, true, 'נכון מאוד! סכום שתי זוויות חדות תמיד קטן מ-180 מעלות, לכן הן לעולם אינן יכולות להיות צמודות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">לא, בלתי אפשרי</button>
+                                    </div>
+                                    <div id="puzzle-feedback-9-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            10: {
+                title: "זוויות קודקודיות",
+                desc: "חיתוך ישרים והבנת השוויון בין זוויות הנמצאות אחת מול השנייה.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">תכונת הזוויות הקודקודיות בחיתוך ישרים</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                כאשר שני קווים ישרים נחתכים זה עם זה, נוצרות ארבע זוויות. הזוויות הנמצאות אחת מול השנייה (מצידי הקודקוד המשותף) נקראות <strong>זוויות קודקודיות</strong>. המשפט הגאומטרי קובע: <strong>זוויות קודקודיות שוות זו לזו</strong>.
+                            </p>
+
+                            <!-- SVG Cross Line Infographic -->
+                            <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 flex justify-center mb-6">
+                                <svg width="200" height="120" viewBox="0 0 200 120">
+                                    <line x1="20" y1="20" x2="180" y2="100" stroke="#f43f5e" stroke-width="3" />
+                                    <line x1="20" y1="100" x2="180" y2="20" stroke="#3b82f6" stroke-width="3" />
+                                    <text x="60" y="65" fill="white" font-size="11" font-weight="bold">α</text>
+                                    <text x="135" y="65" fill="white" font-size="11" font-weight="bold">α</text>
+                                    <text x="100" y="40" fill="white" font-size="11" font-weight="bold">β</text>
+                                    <text x="100" y="90" fill="white" font-size="11" font-weight="bold">β</text>
+                                    <circle cx="100" cy="60" r="4" fill="white" />
+                                </svg>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: שתי זוויות קודקודיות מיוצגות על ידי הביטויים: 2x + 10 ו- x + 40. מהו ערכו של x?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(10, 1, true, 'נכון! נשווה ביניהן: 2x + 10 = x + 40  ומכאן  x = 30.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">30</button>
+                                        <button onclick="checkPuzzleFeedback(10, 1, false, 'זכרו שזוויות קודקודיות שוות זו לזו, לכן נשווה ביניהן ונקבל את ערך ה-x.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">50</button>
+                                    </div>
+                                    <div id="puzzle-feedback-10-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: אם אחת מארבע הזוויות שנוצרות בחיתוך ישרים שווה ל-80 מעלות. מהו גודלה של הזווית הקודקוד לה?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(10, 2, true, 'מעולה! זוויות קודקודיות שוות לחלוטין זו לזו, ולכן גם היא שווה ל-80 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">80 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(10, 2, false, 'היזהרו לא להתבלבל עם זוויות צמודות המשלימות ל-180 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">100 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-10-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: באותו שרטוט חיתוך ישרים (שאלה קודמת), מה יהיה גודלה של הזווית הצמודה לזווית של ה-80 מעלות?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(10, 3, false, 'זווית צמודה משלימה ל-180 מעלות!')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">80 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(10, 3, true, 'נכון מאוד! הזווית הצמודה והזווית הנתונה משלימות ל-180 מעלות יחדיו, ולכן גודלה 100 מעלות!')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">100 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-10-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            11: {
+                title: "חוצה זווית וחישובים",
+                desc: "הגדרת קו חוצה זווית ומשמעותו לחלוקה שווה של המרחב הזוויתי.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">חלוקת זוויות עם חוצה זווית</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                חוצה זווית הוא קרן היוצאת מקודקוד הזווית ומחלקת אותה לשתי זוויות שוות לחלוטין בגודלן. אם נתונה לנו זווית שלמה, חוצה הזווית ייצור שתי זוויות שכל אחת מהן שווה בדיוק לחצי מהזווית המקורית.
+                            </p>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: הקרן BD היא חוצה זווית של זווית ABC הגדולה שגודלה הכולל הוא 70 מעלות. מה גודלה של הזווית ABD?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(11, 1, true, 'נכון! חוצה זווית מחלק אותה בדיוק לשניים: 70 ÷ 2 = 35.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">35 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(11, 1, false, 'חוצה זווית מחלק את הזווית המקורית לשני חלקים שווים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">140 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-11-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: נתון כי הקרן OX היא חוצה זווית של AOX. ידוע כי AOX = 3x - 15 ו- XOB = 2x + 10. מצאו את x.</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(11, 2, false, 'השוו בין שני הביטויים מאחר שחוצה הזווית יוצר שתי זוויות שוות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">15</button>
+                                        <button onclick="checkPuzzleFeedback(11, 2, true, 'מצוין! נשווה: 3x - 15 = 2x + 10  ומכאן  x = 25.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">25</button>
+                                    </div>
+                                    <div id="puzzle-feedback-11-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: אם נעביר שני חוצי זוויות לשתי זוויות צמודות, מה תהיה הזווית הנוצרת בין שני חוצי הזוויות?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(11, 3, true, 'כל הכבוד! סכום שתי הזוויות הוא 180 מעלות. סכום החצאים שלהן הוא תמיד בדיוק 180 ÷ 2 = 90 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">90 מעלות (מאונכים)</button>
+                                        <button onclick="checkPuzzleFeedback(11, 3, false, 'נסו לסמן את הזוויות כ-2a ו-2b כאשר 2a + 2b = 180 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">120 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-11-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            12: {
+                title: "סכום זוויות במשולש ומצולע",
+                desc: "הוכחה ויישום של משפט סכום הזוויות (180 מעלות במשולש).",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">משפט סכום הזוויות הפנימיות</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                סכום הזוויות הפנימיות בכל משולש הוא בדיוק 180 מעלות. תכונה מוחלטת זו מאפשרת לנו לחשב זוויות נעלמות בקלות. <br>
+                                עבור מצולע בעל n צלעות, סכום הזוויות מוגדר על פי הנוסחה הבאה: (n - 2) × 180 מעלות.
+                            </p>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: מהו סכום הזוויות הפנימיות במרובע כלשהו (n=4)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(12, 1, true, 'נכון מאוד! לפי הנוסחה: (4 - 2) × 180 = 360 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">360 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(12, 1, false, 'מרובע מורכב משני משולשים פנימיים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">180 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-12-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: במשולש ישר זווית, אחת מהזוויות החדות גדולה פי 4 מהשנייה. מהו גודל הזווית החדה הקטנה?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(12, 2, false, 'סכום שתי הזוויות החדות במשולש ישר זווית הוא בדיוק 90 מעלות. המשוואה: x + 4x = 90.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">36 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(12, 2, true, 'מעולה! x + 4x = 90  שזה  5x = 90  ומכאן  x = 18 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">18 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-12-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: מהו סכום הזוויות הפנימיות במחומש משוכלל (n=5)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(12, 3, true, 'כל הכבוד! לפי הנוסחה: (5 - 2) × 180 = 3 × 180 = 540 מעלות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">540 מעלות</button>
+                                        <button onclick="checkPuzzleFeedback(12, 3, false, 'הציבו n=5 בנוסחה הכללית המפורטת למעלה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">720 מעלות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-12-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            13: {
+                title: "משולשים ואי-שוויון המשולש",
+                desc: "סיווג משולשים לפי צלעות וזוויות, וחוק קיום המשולש במרחב.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">משפט אי-שוויון המשולש</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                לא כל שלושה קטעים יכולים להרכיב משולש. המשפט קובע: <strong>סכום אורכיהן של כל שתי צלעות במשולש חייב להיות גדול מאורך הצלע השלישית</strong>. <br>
+                                בניסוח מתמטי, עבור צלעות המשולש a, b, c חייב להתקיים תמיד: a + b &gt; c, a + c &gt; b, b + c &gt; a.
+                            </p>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: האם ניתן לבנות במציאות משולש שאורכי צלעותיו הם: 3 ס"מ, 5 ס"מ ו- 9 ס"מ?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(13, 1, false, 'בדקו את שלוש האפשרויות: האם 3 + 5 &gt; 9 מתקיים?')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">כן, ניתן לבנות</button>
+                                        <button onclick="checkPuzzleFeedback(13, 1, true, 'נכון! 3 + 5 = 8, והוא קטן מ-9. אי-שוויון המשולש אינו מתקיים, ולכן לא קיים משולש כזה.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">לא, לא ניתן</button>
+                                    </div>
+                                    <div id="puzzle-feedback-13-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: שתי צלעות של משולש שווה שוקיים הן באורכים 4 ס"מ ו-9 ס"מ. מה חייב להיות אורך הבסיס/השוק השלישית?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(13, 2, false, 'אם אורך הצלע הוא 4, נקבל צלעות 4, 4, 9. האם 4 + 4 &gt; 9 מתקיים?')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">4 ס"מ</button>
+                                        <button onclick="checkPuzzleFeedback(13, 2, true, 'נכון מאוד! הצלע חייבת להיות 9 ס\"מ כדי שיתקיים 4 + 9 &gt; 9. הבחירה ב-4 הייתה נכשלת כי 4 + 4 קטן מ-9.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">9 ס"מ</button>
+                                    </div>
+                                    <div id="puzzle-feedback-13-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: נתונות שתי צלעות במשולש: 6 ס"מ ו-10 ס"מ. מהו התחום האפשרי לאורך הצלע השלישית x?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(13, 3, true, 'מצוין! הצלע השלישית חייבת להיות גדולה מהפרש הצלעות (10 - 6 = 4) וקטנה מסכומן (10 + 6 = 16).')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">בין 4 ס"מ ל-16 ס"מ</button>
+                                        <button onclick="checkPuzzleFeedback(13, 3, false, 'הצלע השלישית חייבת להיות גדולה מהפרש הצלעות וקטנה מסכומן.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">כל אורך מעל 10 ס"מ</button>
+                                    </div>
+                                    <div id="puzzle-feedback-13-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            14: {
+                title: "המלבן כולו: תכונות, היקף ושטח",
+                desc: "חוקים ותכונות של מלבן, חישובי שטח והיקף של צורות מורכבות.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">תכונות המלבן והחישובים</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                מלבן הוא מרובע שכל זוויותיו שוות ל-90 מעלות. תכונות מרכזיות שלו: <br>
+                                • צלעות נגדיות מקבילות ושוות באורכן. <br>
+                                • האלכסונים חוצים זה את זה ושוות באורכם זה לזה. <br>
+                                • <strong>היקף המלבן:</strong> P = 2a + 2b. <br>
+                                • <strong>שטח המלבן:</strong> S = a × b.
+                            </p>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: מלבן שהיקפו הוא 24 ס"מ ואחת מצלעותיו היא 8 ס"מ. מהו שטח המלבן?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(14, 1, true, 'נכון מאוד! הצלע השנייה היא 12 - 8 = 4 ס\"מ. השטח הוא 8 × 4 = 32 סמ\"ר.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">32 סמ"ר</button>
+                                        <button onclick="checkPuzzleFeedback(14, 1, false, 'זכרו שסכום שתי צלעות סמוכות במלבן שווה לחצי מההיקף (12 ס\"מ).')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">48 סמ"ר</button>
+                                    </div>
+                                    <div id="puzzle-feedback-14-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: אם נכפיל את אורך המלבן פי 3 ואת רוחבו פי 2. פי כמה יגדל שטח המלבן המקורי?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(14, 2, false, 'השטח החדש מוגדר על ידי: 3a × 2b.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">פי 5</button>
+                                        <button onclick="checkPuzzleFeedback(14, 2, true, 'נכון מאוד! שטח המלבן המקורי הוא ab. השטח החדש הוא 3a × 2b = 6ab, לכן השטח יגדל פי 6.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">פי 6</button>
+                                    </div>
+                                    <div id="puzzle-feedback-14-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: אלכסון המלבן מחלק אותו לשני משולשים ישרי זווית. אם שטח מלבן הוא 40 סמ\"ר, מה יהיה שטח כל אחד מהמשולשים?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(14, 3, true, 'כל הכבוד! אלכסון המלבן חוצה את המלבן לשני משולשים חופפים ושווים בשטחם. השטח של כל אחד מהם הוא בדיוק חצי משטח המלבן.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">20 סמ"ר</button>
+                                        <button onclick="checkPuzzleFeedback(14, 3, false, 'האלכסון מחלק את המלבן לשני חלקים שווים לחלוטין בגודלם ובשטחם.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">40 סמ"ר</button>
+                                    </div>
+                                    <div id="puzzle-feedback-14-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            15: {
+                title: "מערכת צירים במישור ומרחקים",
+                desc: "מיקום נקודות ברביעים וחישוב מרחקים אופקיים ואנכיים במישור.",
+                html: `
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <h4 class="font-extrabold text-indigo-900 text-lg mb-3">מערכת הצירים ומרחקים בין נקודות</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                מערכת צירים קרטזית מורכבת משני צירים מאונכים. הציר האופקי נקרא ציר ה-X והאנכי נקרא ציר ה-Y. נקודת החיתוך היא ראשית הצירים (0,0). <br>
+                                • <strong>חישוב מרחק אופקי:</strong> בין נקודות בעלות שיעור Y זהה, המרחק הוא הפרש שיעורי ה-X בערך מוחלט: d = |x2 - x1|.<br>
+                                • <strong>חישוב מרחק אנכי:</strong> בין נקודות בעלות שיעור X זהה, המרחק הוא הפרש שיעורי ה-Y בערך מוחלט: d = |y2 - y1|.
+                            </p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-6">
+                                <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-xs space-y-2">
+                                    <p class="font-bold text-indigo-950">מיקום הנקודה: <span id="topic-coord-lbl" class="text-sm font-black text-indigo-600">(2, 2)</span></p>
+                                    <p class="font-bold text-purple-950">הרביע: <span id="topic-quadrant-lbl" class="text-sm font-black text-purple-600">רביע 1 (+,+)</span></p>
+                                </div>
+                                <div class="flex justify-center">
+                                    <svg id="topic-coordinate-svg" class="w-48 h-48 border bg-slate-900 rounded-xl select-none" viewBox="0 0 200 200" onclick="handleTopicCoordinateClick(event)">
+                                        <!-- Axis drawing done dynamically -->
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Progressive Multi-Puzzle Section -->
+                            <div class="bg-yellow-50 p-5 rounded-xl border border-yellow-200 space-y-4">
+                                <h5 class="font-bold text-sm text-yellow-800 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-puzzle-piece"></i> ערכת חידות מתקדמת: 3 שלבים
+                                </h5>
+                                
+                                <!-- Step 1 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 1: מהו המרחק (ביחידות) בין הנקודה A(2, 5) לנקודה B(2, -3)? (ה-X זהה!)</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(15, 1, true, 'נכון מאוד! המרחק האנכי הוא הפרש שיעורי ה-Y בערך מוחלט: |5 - (-3)| = 8 יחידות.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">8 יחידות מרחק</button>
+                                        <button onclick="checkPuzzleFeedback(15, 1, false, 'חשבו את ההפרש האנכי: 5 - (-3).')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">2 יחידות מרחק</button>
+                                    </div>
+                                    <div id="puzzle-feedback-15-1" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="border-b border-yellow-100 pb-3">
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 2: באיזה רביע נמצאת הנקודה C(-4, -6)?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(15, 2, false, 'ברביע זה גם ה-X וגם ה-Y שליליים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">רביע שני</button>
+                                        <button onclick="checkPuzzleFeedback(15, 2, true, 'נכון מאוד! רביע שלישי מאופיין בכך ששני שיעורי הנקודה הם שליליים.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">רביע שלישי</button>
+                                    </div>
+                                    <div id="puzzle-feedback-15-2" class="hidden mt-2 text-xs"></div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div>
+                                    <p class="text-xs text-yellow-950 mb-2 font-bold">שלב 3: מהו המרחק בין הנקודה D(-5, 4) לבין ציר ה-Y?</p>
+                                    <div class="flex gap-2">
+                                        <button onclick="checkPuzzleFeedback(15, 3, true, 'כל הכבוד! המרחק מציר ה-Y נקבע על פי הערך המוחלט של שיעור ה-X: |-5| = 5.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">5 יחידות</button>
+                                        <button onclick="checkPuzzleFeedback(15, 3, false, 'המרחק מציר ה-Y הוא המרחק האופקי של הנקודה מהאפס בציר ה-X.')" class="bg-white hover:bg-yellow-100 px-3 py-1.5 rounded-lg text-xs font-bold border border-yellow-300 transition">4 יחידות</button>
+                                    </div>
+                                    <div id="puzzle-feedback-15-3" class="hidden mt-2 text-xs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        // Check Mini-Puzzles Feedbacks
+        function checkPuzzleFeedback(topicId, questionId, isCorrect, explanationText) {
+            const feedbackId = `puzzle-feedback-${topicId}-${questionId}`;
+            const feedbackDiv = document.getElementById(feedbackId);
+            if (!feedbackDiv) return;
+
+            feedbackDiv.classList.remove('hidden', 'text-emerald-700', 'text-rose-700', 'bg-emerald-50', 'bg-rose-50', 'border-emerald-200', 'border-rose-200');
+            
+            if (isCorrect) {
+                feedbackDiv.classList.add('text-emerald-700', 'bg-emerald-50', 'border', 'border-emerald-200', 'p-3', 'rounded-xl', 'mt-2', 'font-semibold');
+                feedbackDiv.innerHTML = `<i class="fa-solid fa-circle-check ml-1 text-emerald-600"></i> נכון מאוד! ${explanationText}`;
+            } else {
+                feedbackDiv.classList.add('text-rose-700', 'bg-rose-50', 'border', 'border-rose-200', 'p-3', 'rounded-xl', 'mt-2');
+                feedbackDiv.innerHTML = `<i class="fa-solid fa-triangle-exclamation ml-1 text-rose-500"></i> לא מדויק. ${explanationText}`;
+            }
+        }
+
+        function showTopicContent(chapterNum) {
+            // Highlights active category button
+            document.querySelectorAll('.topic-btn').forEach((btn, idx) => {
+                if (idx + 1 === chapterNum) {
+                    btn.className = "topic-btn p-3 rounded-xl border text-right transition-all bg-indigo-50 border-indigo-200 text-indigo-950 font-bold flex flex-col justify-between h-24";
+                } else {
+                    btn.className = "topic-btn p-3 rounded-xl border text-right transition-all bg-white border-slate-200 hover:border-indigo-200 text-slate-800 font-bold flex flex-col justify-between h-24";
+                }
+            });
+
+            const data = topicsDatabase[chapterNum];
+            const container = document.getElementById('study-topic-content');
+            if (container) {
+                container.innerHTML = data.html;
+            }
+
+            // Trigger internal scripts after content load
+            if (chapterNum === 2) {
+                updateTopicNumberLine();
+            } else if (chapterNum === 3) {
+                calculateTopicOps();
+            } else if (chapterNum === 15) {
+                handleTopicCoordinateClick(null);
+            }
+        }
+
+        // --- SUB-WIDGET INTERNAL SCRIPT HANDLERS ---
+        
+        // Topic 2: Numberline
+        function updateTopicNumberLine() {
+            const slider = document.getElementById('numbers-topic-slider');
+            if (!slider) return;
+            const val = parseInt(slider.value);
+            const opp = -val;
+
+            document.getElementById('num-slider-lbl').innerText = (val > 0 ? "+" : "") + val;
+            document.getElementById('num-slider-opp').innerText = (opp > 0 ? "+" : "") + opp;
+
+            const svg = document.getElementById('topic-numline-svg');
+            if (!svg) return;
+            svg.innerHTML = '';
+
+            const cy = 30;
+            const zeroX = 225;
+            const step = 20;
+
+            // Axis line
+            createSvgLine('topic-numline-svg', 10, cy, 440, cy, "#475569", 2);
+            // Marks & Labels
+            for (let i = -10; i <= 10; i++) {
+                const curX = zeroX + i * step;
+                const h = i === 0 ? 12 : 8;
+                createSvgLine('topic-numline-svg', curX, cy - h/2, curX, cy + h/2, i === 0 ? "#1e293b" : "#94a3b8", i === 0 ? 2 : 1);
+                if (i % 2 === 0 || i === 0) {
+                    createSvgText('topic-numline-svg', i, curX, cy + 18, "#64748b", "10px", "middle");
+                }
+            }
+
+            // Draw current active dot
+            createSvgCircle('topic-numline-svg', zeroX + val * step, cy, 6, "#4f46e5");
+            createSvgCircle('topic-numline-svg', zeroX + opp * step, cy, 5, "#db2777");
+        }
+
+        // Topic 3: Directed Operations
+        function calculateTopicOps() {
+            const n1 = parseFloat(document.getElementById('op-num1').value);
+            const n2 = parseFloat(document.getElementById('op-num2').value);
+            const op = document.getElementById('op-select').value;
+            const res = document.getElementById('op-calc-res');
+            if (!res) return;
+
+            if (isNaN(n1) || isNaN(n2)) {
+                res.innerHTML = "אנא הזן מספרים תקינים!";
+                res.classList.remove('hidden');
+                return;
+            }
+
+            let value = 0;
+            let phrase = "";
+
+            if (op === 'mul') {
+                value = n1 * n2;
+                phrase = `${n1} × ${n2} = ${value}`;
+            } else {
+                if (n2 === 0) {
+                    res.innerHTML = "שגיאה! חילוק באפס!";
+                    res.classList.remove('hidden');
+                    return;
+                }
+                value = n1 / n2;
+                phrase = `${n1} ÷ ${n2} = ${value}`;
+            }
+
+            res.innerHTML = `
+                <p>התרגיל: ${phrase}</p>
+                <p class="text-[10px] text-slate-500 font-normal mt-1">הסבר: סימנים ${ (n1*n2 >= 0) ? "זהים נותנים תוצאה חיובית" : "שונים נותנים תוצאה שלילית"}.</p>
+            `;
+            res.classList.remove('hidden');
+        }
+
+        // Topic 15: Coordinate system click
+        function handleTopicCoordinateClick(event) {
+            const svg = document.getElementById('topic-coordinate-svg');
+            if (!svg) return;
+
+            svg.innerHTML = '';
+            const size = 200;
+            const cx = size/2, cy = size/2;
+
+            // Draw grid & axes
+            createSvgLine('topic-coordinate-svg', 0, cy, size, cy, "#475569", 1.5);
+            createSvgLine('topic-coordinate-svg', cx, 0, cx, size, "#475569", 1.5);
+
+            let clickX = 140, clickY = 60; // Default pos
+            if (event) {
+                const rect = svg.getBoundingClientRect();
+                clickX = ((event.clientX - rect.left) / rect.width) * size;
+                clickY = ((event.clientY - rect.top) / rect.height) * size;
+            }
+
+            // Convert to math units (-5 to 5) where 1 unit = 20 pixels
+            const mathX = parseFloat(((clickX - cx) / 20).toFixed(1));
+            const mathY = parseFloat(((cy - clickY) / 20).toFixed(1));
+
+            // Draw user target point
+            createSvgCircle('topic-coordinate-svg', clickX, clickY, 5, "#ec4899");
+
+            document.getElementById('topic-coord-lbl').innerText = `(${mathX}, ${mathY})`;
+
+            // Quadrant text logic
+            let text = "";
+            if (mathX > 0 && mathY > 0) text = "רביע ראשון (+,+)";
+            else if (mathX < 0 && mathY > 0) text = "רביע שני (-,+)";
+            else if (mathX < 0 && mathY < 0) text = "רביע שלישי (-,-)";
+            else if (mathX > 0 && mathY < 0) text = "רביע רביעי (+,-)";
+            else text = "על אחד הצירים / ראשית";
+
+            document.getElementById('topic-quadrant-lbl').innerText = text;
+        }
+
+        // ==========================================
+        // SECTION 2: THE 20 GEOMETRY CHALLENGES LAB
+        // ==========================================
+        const sandboxSvg = document.getElementById('sandbox-svg');
+        const nodes = {
+            'A': { id: 'node-a', labelId: 'label-node-a', x: 250, y: 70 },
+            'B': { id: 'node-b', labelId: 'label-node-b', x: 120, y: 280 },
+            'C': { id: 'node-c', labelId: 'label-node-c', x: 380, y: 280 }
+        };
+        let activeNodeKey = null;
+
+        // Current Active Mission Index (0 to 19)
+        let activeMissionIndex = 0;
+        let unlockedMissionsCount = 1; // Unlocked count
+
+        const sandboxMissions = [
+            { id: 1, title: "המשולש החד-זווית", desc: "גררו את הקודקודים כך שכל שלוש הזוויות במשולש יהיו חדות (קטנות מ-90°).", check: (a, b, c) => a < 90 && b < 90 && c < 90 },
+            { id: 2, title: "הזווית הישרה ב-A", desc: "סדרו את הקודקודים כך שזווית A (α) תהיה בדיוק ישרת זווית (בין 88° ל-92°).", check: (a, b, c) => a >= 88 && a <= 92 },
+            { id: 3, title: "המשולש קהה הזווית", desc: "סדרו את הקודקודים כך שאחת מהזוויות תהיה קהה (גדולה מ-105°).", check: (a, b, c) => a > 105 || b > 105 || c > 105 },
+            { id: 4, title: "שיווי משקל שוקיים", desc: "צרו משולש שווה שוקיים בו זוויות הבסיס B ו-C קרובות מאוד לשוויון (הפרש של עד 2°).", check: (a, b, c) => Math.abs(b - c) <= 2 },
+            { id: 5, title: "השלמות המושלמת 60-60-60", desc: "צרו משולש שווה צלעות! כל הזוויות צריכות להיות סביב 60° (בין 57° ל-63°).", check: (a, b, c) => Math.abs(a-60)<=3 && Math.abs(b-60)<=3 && Math.abs(c-60)<=3 },
+            { id: 6, title: "הזווית הכפולה", desc: "סדרו את המשולש כך שזווית A תהיה גדולה בערך פי 2 מזווית B (יחס של פי 1.9 עד 2.1).", check: (a, b, c) => { let ratio = a/b; return ratio >= 1.9 && ratio <= 2.1; } },
+            { id: 7, title: "משולש ישר זווית ושווה שוקיים", desc: "צרו משולש בעל זווית אחת של 90° (±3) ושתי זוויות של 45° (±3).", check: (a, b, c) => (Math.abs(a-90)<=3 && Math.abs(b-45)<=3) || (Math.abs(b-90)<=3 && Math.abs(a-45)<=3) || (Math.abs(c-90)<=3 && Math.abs(a-45)<=3) },
+            { id: 8, title: "זווית קטנטנה", desc: "גררו את הקודקודים כדי ליצור זווית C (γ) שהיא פחות מ-22°.", check: (a, b, c) => c < 22 },
+            { id: 9, title: "משולש פחוס וענק", desc: "צרו זווית A (α) גדולה מאוד, מעל 125°.", check: (a, b, c) => a > 125 },
+            { id: 10, title: "צמד חמד 130°", desc: "סדרו את הקודקודים כך שסכום הזוויות A ו-B יהיה בדיוק 130° (±2°).", check: (a, b, c) => Math.abs((a+b) - 130) <= 2 },
+            { id: 11, title: "המדורה המטפסת 50-60-70", desc: "צרו משולש שבו הזוויות הן בערך 50°, 60° ו-70° (סטייה של עד 3°).", check: (a, b, c) => {
+                let sorted = [a,b,c].sort((x,y)=>x-y);
+                return Math.abs(sorted[0]-50)<=3 && Math.abs(sorted[1]-60)<=3 && Math.abs(sorted[2]-70)<=3;
+            }},
+            { id: 12, title: "גובה נמוך במיוחד", desc: "קרבו את קודקוד A מאוד קרוב לבסיס BC כך שזווית A תהיה קהה במיוחד (מעל 140°).", check: (a, b, c) => a > 140 },
+            { id: 13, title: "משולש הזהב 30-60-90", desc: "צרו את משולש הזהב המפורסם! זוויות של 30°, 60° ו-90° (סטייה מותרת של עד 3°).", check: (a, b, c) => {
+                let sorted = [a,b,c].sort((x,y)=>x-y);
+                return Math.abs(sorted[0]-30)<=3 && Math.abs(sorted[1]-60)<=3 && Math.abs(sorted[2]-90)<=3;
+            }},
+            { id: 14, title: "כנפיים תאומות 75°", desc: "צרו משולש שבו שתי זוויות שוות בערך ל-75° (בין 73° ל-77°).", check: (a, b, c) => (Math.abs(a-75)<=2 && Math.abs(b-75)<=2) || (Math.abs(b-75)<=2 && Math.abs(c-75)<=2) || (Math.abs(a-75)<=2 && Math.abs(c-75)<=2) },
+            { id: 15, title: "הזווית הקהה השמנה 120°", desc: "גררו את המשולש כדי ליצור זווית קהה של בדיוק 120° בקודקוד C (±3°).", check: (a, b, c) => Math.abs(c - 120) <= 3 },
+            { id: 16, title: "הפסגה הגבוהה", desc: "צרו משולש גבוה וחד שבו זווית הראש A היא קטנה מ-35° ושתי זוויות הבסיס כמעט שוות.", check: (a, b, c) => a < 35 && Math.abs(b-c) <= 4 },
+            { id: 17, title: "מיקוד ב-B", desc: "סדרו את הקודקודים כך שזווית B תהיה בדיוק 65° (±2°).", check: (a, b, c) => Math.abs(b - 65) <= 2 },
+            { id: 18, title: "רוחב מקסימלי", desc: "מתחו את הקודקודים C ו-B לקצוות המסך כך שזווית הראש A תהיה מעל 110°.", check: (a, b, c) => a > 110 && Math.abs(nodes.C.x - nodes.B.x) > 240 },
+            { id: 19, title: "מפרש מתוח ודק", desc: "צרו משולש עם זווית בסיס אחת גדולה במיוחד (מעל 80°) וזווית ראש קטנה מ-25°.", check: (a, b, c) => (b > 80 || c > 80) && a < 25 },
+            { id: 20, title: "הקריסה ל-180 מעלות", desc: "הביאו את שלושת הקודקודים כמעט לקו ישר אחד (זווית אחת קרובה ל-170° ומעלה).", check: (a, b, c) => a > 165 || b > 165 || c > 165 }
+        ];
+
+        // Drag Setup for sandbox nodes
+        ['A', 'B', 'C'].forEach(key => {
+            const element = document.getElementById(nodes[key].id);
+            if (!element) return;
+            const startDrag = (e) => {
+                activeNodeKey = key;
+                e.preventDefault();
+            };
+            element.addEventListener('mousedown', startDrag);
+            element.addEventListener('touchstart', startDrag);
+        });
+
+        const onDragMove = (e) => {
+            if (!activeNodeKey) return;
+            const rect = sandboxSvg.getBoundingClientRect();
+            let clientX, clientY;
+            if (e.touches && e.touches.length > 0) {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+            } else {
+                clientX = e.clientX;
+                clientY = e.clientY;
+            }
+
+            let x = ((clientX - rect.left) / rect.width) * 500;
+            let y = ((clientY - rect.top) / rect.height) * 360;
+
+            x = Math.max(25, Math.min(475, x));
+            y = Math.max(25, Math.min(335, y));
+
+            nodes[activeNodeKey].x = Math.round(x);
+            nodes[activeNodeKey].y = Math.round(y);
+
+            updateSandbox();
+        };
+
+        window.addEventListener('mousemove', onDragMove);
+        window.addEventListener('touchmove', onDragMove, {passive: false});
+
+        const stopDrag = () => { activeNodeKey = null; };
+        window.addEventListener('mouseup', stopDrag);
+        window.addEventListener('touchend', stopDrag);
+
+        function updateSandbox() {
+            const poly = document.getElementById('triangle-poly');
+            if (!poly) return;
+            poly.setAttribute('points', `${nodes.A.x},${nodes.A.y} ${nodes.B.x},${nodes.B.y} ${nodes.C.x},${nodes.C.y}`);
+
+            for (let key in nodes) {
+                const node = document.getElementById(nodes[key].id);
+                const label = document.getElementById(nodes[key].labelId);
+                if (node && label) {
+                    node.setAttribute('cx', nodes[key].x);
+                    node.setAttribute('cy', nodes[key].y);
+                    label.setAttribute('x', nodes[key].x);
+                    label.setAttribute('y', nodes[key].y + 4);
+                }
+            }
+
+            // Calculation
+            const a = Math.hypot(nodes.B.x - nodes.C.x, nodes.B.y - nodes.C.y);
+            const b = Math.hypot(nodes.A.x - nodes.C.x, nodes.A.y - nodes.C.y);
+            const c = Math.hypot(nodes.A.x - nodes.B.x, nodes.A.y - nodes.B.y);
+
+            let angleA = 0, angleB = 0, angleC = 0;
+            if (b > 0 && c > 0) angleA = Math.acos((b*b + c*c - a*a) / (2 * b * c)) * (180 / Math.PI);
+            if (a > 0 && c > 0) angleB = Math.acos((a*a + c*c - b*b) / (2 * a * c)) * (180 / Math.PI);
+            if (a > 0 && b > 0) angleC = Math.acos((a*a + b*b - c*c) / (2 * a * b)) * (180 / Math.PI);
+
+            const rA = Math.round(angleA);
+            const rB = Math.round(angleB);
+            const rC = 180 - rA - rB;
+
+            const degA = document.getElementById('sandbox-angle-a');
+            const degB = document.getElementById('sandbox-angle-b');
+            const degC = document.getElementById('sandbox-angle-c');
+            const sumFormula = document.getElementById('sandbox-sum-formula');
+
+            if (degA && degB && degC && sumFormula) {
+                degA.innerText = `${rA}°`;
+                degB.innerText = `${rB}°`;
+                degC.innerText = `${rC}°`;
+                sumFormula.innerText = `${rA}° + ${rB}° + ${rC}° = 180° תמיד!`;
+            }
+
+            // Stable positions inside vertices
+            positionAngleLabelStable('text-angle-a', nodes.A, rA);
+            positionAngleLabelStable('text-angle-b', nodes.B, rB);
+            positionAngleLabelStable('text-angle-c', nodes.C, rC);
+
+            // Verify Active Mission Condition
+            verifySandboxMissions(rA, rB, rC);
+        }
+
+        function positionAngleLabelStable(textId, node, angleVal) {
+            const el = document.getElementById(textId);
+            if (el) {
+                el.setAttribute('x', node.x);
+                el.setAttribute('y', node.y + (node.y > 180 ? -25 : 30));
+                el.textContent = `${angleVal}°`;
+            }
+        }
+
+        function verifySandboxMissions(a, b, c) {
+            const currentMission = sandboxMissions[activeMissionIndex];
+            const badge = document.getElementById('mission-status-badge');
+            const nextBtn = document.getElementById('next-mission-btn');
+            if (!currentMission || !badge || !nextBtn) return;
+
+            const isPassed = currentMission.check(a, b, c);
+
+            if (isPassed) {
+                badge.className = "flex items-center gap-1.5 text-xs font-bold text-emerald-400 animate-bounce";
+                badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> תנאי השרטוט הושלמו בהצלחה!';
+                nextBtn.disabled = false;
+                
+                // Track unlocked
+                if (activeMissionIndex + 1 >= unlockedMissionsCount) {
+                    unlockedMissionsCount = Math.min(20, activeMissionIndex + 2);
+                    generateLevelDots();
+                }
+            } else {
+                badge.className = "flex items-center gap-1.5 text-xs font-bold text-amber-400";
+                badge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> כוונו את המשולש לפי התיאור...';
+                nextBtn.disabled = true;
+            }
+        }
+
+        function selectMission(idx) {
+            if (idx >= unlockedMissionsCount) return; // Locked
+            activeMissionIndex = idx;
+            
+            const current = sandboxMissions[activeMissionIndex];
+            document.getElementById('mission-fraction').innerText = `משימה ${current.id} מתוך 20`;
+            document.getElementById('mission-title').innerText = `משימה ${current.id}: ${current.title}`;
+            document.getElementById('mission-desc').innerText = current.desc;
+            
+            const percent = Math.round((current.id / 20) * 100);
+            document.getElementById('mission-percent').innerText = `${percent}%`;
+            document.getElementById('mission-progress-bar').style.width = `${percent}%`;
+
+            generateLevelDots();
+            updateSandbox();
+        }
+
+        function nextMission() {
+            if (activeMissionIndex < 19) {
+                selectMission(activeMissionIndex + 1);
+            } else {
+                const badge = document.getElementById('mission-status-badge');
+                badge.className = "flex items-center gap-1.5 text-sm font-black text-yellow-300 animate-pulse";
+                badge.innerHTML = '🎉 אלופי השרטוט! השלמתם את כל 20 המשימות!';
+            }
+        }
+
+        function generateLevelDots() {
+            const grid = document.getElementById('level-dots-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            for (let i = 0; i < 20; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i + 1;
+                btn.className = "h-8 text-xs font-extrabold rounded-lg transition-all ";
+                
+                if (i === activeMissionIndex) {
+                    btn.className += "bg-indigo-600 text-white ring-2 ring-yellow-400";
+                } else if (i < unlockedMissionsCount) {
+                    btn.className += "bg-emerald-100 text-emerald-800 hover:bg-emerald-200";
+                } else {
+                    btn.className += "bg-slate-200 text-slate-400 cursor-not-allowed";
+                    btn.disabled = true;
+                    btn.innerHTML = `<i class="fa-solid fa-lock text-[9px]"></i>`;
+                }
+                
+                btn.onclick = () => selectMission(i);
+                grid.appendChild(btn);
+            }
+        }
+
+        function resetSandbox() {
+            nodes.A.x = 250; nodes.A.y = 70;
+            nodes.B.x = 120; nodes.B.y = 280;
+            nodes.C.x = 380; nodes.C.y = 280;
+            updateSandbox();
+        }
+
+        // ==========================================
+        // SECTION 3: IMMERSIVE GAME CONTROL
+        // ==========================================
+        let gameMode = 'angles'; // 'angles' or 'algebra'
+        let gameScore = 0;
+        let gameLevel = 1;
+        let gameLives = 3;
+        let correctGameAnswer = 0;
+        let gameStreak = 0;
+
+        // Algebra game properties
+        let algebraCountdown = 15;
+        let algebraTimerInterval = null;
+
+        function toggleGameMode(mode) {
+            gameMode = mode;
+            document.getElementById('game-feedback').className = "hidden text-center p-3 rounded-xl font-bold text-base";
+            
+            const btnAngles = document.getElementById('mode-btn-angles');
+            const btnAlgebra = document.getElementById('mode-btn-algebra');
+            const panelAngles = document.getElementById('game-panel-angles');
+            const panelAlgebra = document.getElementById('game-panel-algebra');
+            const traj = document.getElementById('algebra-trajectory');
+            const tri = document.getElementById('game-triangle');
+
+            if (mode === 'angles') {
+                btnAngles.className = "flex-1 py-2 rounded-lg text-xs font-bold transition-all bg-white text-slate-800 shadow";
+                btnAlgebra.className = "flex-1 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-800";
+                panelAngles.classList.remove('hidden');
+                panelAlgebra.classList.add('hidden');
+                tri.classList.remove('hidden');
+                traj.classList.add('hidden');
+                if (algebraTimerInterval) clearInterval(algebraTimerInterval);
+                startScenario();
+            } else {
+                btnAlgebra.className = "flex-1 py-2 rounded-lg text-xs font-bold transition-all bg-white text-slate-800 shadow";
+                btnAngles.className = "flex-1 py-2 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-800";
+                panelAlgebra.classList.remove('hidden');
+                panelAngles.classList.add('hidden');
+                tri.classList.add('hidden');
+                traj.classList.remove('hidden');
+                startAlgebraScenario();
+            }
+        }
+
+        function startScenario() {
+            if (gameMode !== 'angles') return;
+            let angleA, angleB;
+            if (gameLevel <= 3) {
+                angleA = [30, 40, 50, 60, 45, 90][Math.floor(Math.random() * 6)];
+                angleB = [30, 40, 50, 60, 45, 70][Math.floor(Math.random() * 6)];
+                while (angleA + angleB >= 170) {
+                    angleA -= 10;
+                }
+            } else if (gameLevel <= 7) {
+                angleA = Math.floor(Math.random() * 70) + 20;
+                angleB = Math.floor(Math.random() * 70) + 20;
+            } else {
+                angleA = Math.floor(Math.random() * 110) + 15;
+                angleB = Math.floor(Math.random() * (165 - angleA)) + 10;
+            }
+
+            correctGameAnswer = 180 - angleA - angleB;
+
+            document.getElementById('game-val-a').innerText = `${angleA}°`;
+            document.getElementById('game-val-b').innerText = `${angleB}°`;
+            document.getElementById('game-answer').value = '';
+            document.getElementById('game-feedback').className = "hidden text-center p-3 rounded-xl font-bold text-base";
+
+            const targetY = 185 - (correctGameAnswer * 1.5);
+            const topNodeY = Math.max(35, Math.min(135, targetY));
+            
+            document.getElementById('game-triangle').setAttribute('points', `200,${topNodeY} 100,240 300,240`);
+            
+            const targetPlanet = document.querySelector('#game-svg circle[fill="#eab308"]');
+            if (targetPlanet) targetPlanet.setAttribute('cy', topNodeY);
+
+            resetSpaceshipAnimation();
+        }
+
+        function startAlgebraScenario() {
+            if (gameMode !== 'algebra') return;
+            document.getElementById('game-algebra-answer').value = '';
+            document.getElementById('game-feedback').className = "hidden text-center p-3 rounded-xl font-bold text-base";
+            resetSpaceshipAnimation();
+
+            // Generate solvable equation: ax + b = c
+            let a = Math.floor(Math.random() * 6) + 2; // coefficient: 2 to 7
+            let x = Math.floor(Math.random() * 12) + 1; // answer: 1 to 12
+            let b = Math.floor(Math.random() * 15) + 1; // offset: 1 to 15
+            let sign = Math.random() > 0.5 ? 1 : -1;
+            b = b * sign;
+
+            let c = a * x + b;
+            correctGameAnswer = x;
+
+            const signStr = b >= 0 ? `+ ${b}` : `- ${Math.abs(b)}`;
+            // Remvoed dollar signs entirely for absolute clarity
+            document.getElementById('algebra-equation-text').innerHTML = `${a}x ${signStr} = ${c}`;
+
+            // Start timer
+            algebraCountdown = Math.max(8, 20 - gameLevel);
+            document.getElementById('algebra-timer-lbl').innerText = `זמן: ${algebraCountdown} ש'`;
+            
+            if (algebraTimerInterval) clearInterval(algebraTimerInterval);
+            algebraTimerInterval = setInterval(() => {
+                algebraCountdown--;
+                document.getElementById('algebra-timer-lbl').innerText = `זמן: ${algebraCountdown} ש'`;
+                if (algebraCountdown <= 0) {
+                    clearInterval(algebraTimerInterval);
+                    handleAlgebraTimeout();
+                }
+            }, 1000);
+        }
+
+        function submitGameAnswer() {
+            const userAnswer = parseInt(document.getElementById('game-answer').value);
+            const feedback = document.getElementById('game-feedback');
+            if (!feedback) return;
+            feedback.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+            if (isNaN(userAnswer)) {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = 'הזינו מספר גודל זווית חוקי!';
+                return;
+            }
+
+            if (userAnswer === correctGameAnswer) {
+                gameStreak++;
+                let points = 100;
+                const streakBadge = document.getElementById('streak-badge');
+                if (gameStreak >= 2) {
+                    points *= gameStreak;
+                    if (streakBadge) {
+                        streakBadge.innerText = `רצף חם X${gameStreak}! 🔥`;
+                        streakBadge.classList.remove('hidden');
+                    }
+                }
+
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = `נתיב טיסה מושלם! +${points} נקודות.`;
+                gameScore += points;
+                document.getElementById('game-score').innerText = gameScore;
+                
+                animateSpaceshipToTarget(() => {
+                    gameLevel++;
+                    document.getElementById('game-level').innerText = gameLevel;
+                    setTimeout(startScenario, 1200);
+                });
+            } else {
+                gameStreak = 0;
+                const sb = document.getElementById('streak-badge');
+                if (sb) sb.classList.add('hidden');
+                
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = `החישוב לא נכון! התשובה הנכונה היא ${correctGameAnswer}° (180 פחות סכום הזוויות).`;
+                gameLives--;
+                updateLivesDisplay();
+                
+                if (gameLives <= 0) {
+                    showGameEndOverlay(false);
+                } else {
+                    setTimeout(startScenario, 2500);
+                }
+            }
+        }
+
+        function submitAlgebraAnswer() {
+            const userAnswer = parseInt(document.getElementById('game-algebra-answer').value);
+            const feedback = document.getElementById('game-feedback');
+            if (!feedback) return;
+            feedback.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+
+            if (isNaN(userAnswer)) {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = 'הזינו מספר תקין!';
+                return;
+            }
+
+            if (algebraTimerInterval) clearInterval(algebraTimerInterval);
+
+            if (userAnswer === correctGameAnswer) {
+                feedback.classList.add('bg-green-100', 'text-green-800');
+                feedback.innerHTML = `תשובה נכונה! המנועים הוטענו בהצלחה. +150 נקודות.`;
+                gameScore += 150;
+                document.getElementById('game-score').innerText = gameScore;
+
+                animateSpaceshipToTarget(() => {
+                    gameLevel++;
+                    document.getElementById('game-level').innerText = gameLevel;
+                    setTimeout(startAlgebraScenario, 1200);
+                });
+            } else {
+                feedback.classList.add('bg-red-100', 'text-red-800');
+                feedback.innerHTML = `שגיאה! הפתרון הנכון הוא x = ${correctGameAnswer}.`;
+                gameLives--;
+                updateLivesDisplay();
+
+                if (gameLives <= 0) {
+                    showGameEndOverlay(false);
+                } else {
+                    setTimeout(startAlgebraScenario, 2500);
+                }
+            }
+        }
+
+        function handleAlgebraTimeout() {
+            const feedback = document.getElementById('game-feedback');
+            if (!feedback) return;
+            feedback.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            
+            feedback.classList.add('bg-red-100', 'text-red-800');
+            feedback.innerHTML = `נגמר הזמן! הפתרון הנכון הוא x = ${correctGameAnswer}.`;
+            gameLives--;
+            updateLivesDisplay();
+
+            if (gameLives <= 0) {
+                showGameEndOverlay(false);
+            } else {
+                setTimeout(startAlgebraScenario, 2500);
+            }
+        }
+
+        function updateLivesDisplay() {
+            const container = document.getElementById('game-lives');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 0; i < 3; i++) {
+                const heart = document.createElement('i');
+                if (i < gameLives) {
+                    heart.className = 'fa-solid fa-heart drop-shadow-[0_0_8px_rgba(244,63,94,0.6)] animate-pulse';
+                } else {
+                    heart.className = 'fa-regular fa-heart text-slate-700';
+                }
+                container.appendChild(heart);
+            }
+        }
+
+        function animateSpaceshipToTarget(callback) {
+            const ship = document.getElementById('game-spaceship');
+            const targetPlanet = document.querySelector('#game-svg circle[fill="#eab308"]');
+            if (!ship || !targetPlanet) return;
+            const targetY = parseFloat(targetPlanet.getAttribute('cy'));
+
+            ship.style.transition = "transform 1s ease-in-out";
+            const angleDeg = Math.atan2(targetY - 240, 200 - 100) * (180 / Math.PI) + 90;
+            ship.setAttribute('transform', `translate(200, ${targetY}) rotate(${angleDeg})`);
+
+            setTimeout(callback, 1000);
+        }
+
+        function resetSpaceshipAnimation() {
+            const ship = document.getElementById('game-spaceship');
+            if (ship) {
+                ship.style.transition = "none";
+                ship.setAttribute('transform', 'translate(100, 240) rotate(35)');
+            }
+        }
+
+        function showGameEndOverlay(isSuccess) {
+            const overlay = document.getElementById('game-overlay');
+            const desc = document.getElementById('overlay-desc');
+            if (overlay && desc) {
+                desc.innerText = `הגעת לרמה ${gameLevel} וצברת ${gameScore} נקודות במרכז האימונים הקוסמי!`;
+                overlay.classList.remove('hidden');
+            }
+        }
+
+        function restartGame() {
+            gameScore = 0;
+            gameLevel = 1;
+            gameLives = 3;
+            gameStreak = 0;
+            const sb = document.getElementById('streak-badge');
+            if (sb) sb.classList.add('hidden');
+            document.getElementById('game-score').innerText = "0";
+            document.getElementById('game-level').innerText = "1";
+            updateLivesDisplay();
+            document.getElementById('game-overlay').classList.add('hidden');
+            if (gameMode === 'angles') {
+                startScenario();
+            } else {
+                startAlgebraScenario();
+            }
+        }
+
+
+        // ==========================================
+        // SECTION 4: THE 50 QUESTIONS MIFMAR EXAM DATABASE
+        // ==========================================
+        let examQuestions = [
+            // Theme 1: Directed Numbers & Number Line (10 Qs)
+            { q: "על ציר המספרים, איזה מספר נמצא בדיוק במרחק שווה מהמספרים 4 ו- -8?", options: ["-2", "-4", "2", "0"], correct: 0, topic: "ציר המספרים ונגדיים" },
+            { q: "איזה מהמספרים הבאים הוא הנגדי של -15?", options: ["15", "0", "-15", "1/15"], correct: 0, topic: "ציר המספרים ונגדיים" },
+            { q: "מהו הערך המוחלט של המספר -42?", options: ["42", "-42", "0", "1"], correct: 0, topic: "ציר המספרים ונגדיים" },
+            { q: "מבין זוגות המספרים הבאים, באיזה זוג המספר הראשון גדול מהשני?", options: ["-3 > -5", "-8 > -2", "-10 > 0", "-15 > -10"], correct: 0, topic: "ציר המספרים ונגדיים" },
+            { q: "אם נתחיל בנקודה -3 על ציר המספרים ונזוז 5 יחידות ימינה, לאיזה מספר נגיע?", options: ["2", "-8", "8", "-2"], correct: 0, topic: "ציר המספרים ונגדיים" },
+            { q: "מהו המספר הנגדי של 0?", options: ["0", "אין מספר נגדי ל-0", "-1", "1"], correct: 0, topic: "ציר המספרים ונגדיים" },
+            { q: "מהו פתרון התרגיל: (-3) + (-4)?", options: ["-7", "7", "-1", "1"], correct: 0, topic: "פעולות במספרים מכוונים" },
+            { q: "מהו פתרון התרגיל: (-5) - (-8)?", options: ["3", "-13", "13", "-3"], correct: 0, topic: "פעולות במספרים מכוונים" },
+            { q: "מהו פתרון התרגיל: 12 + (-15)?", options: ["-3", "3", "-27", "27"], correct: 0, topic: "פעולות במספרים מכוונים" },
+            { q: "על ציר המספרים, כמה יחידות מרחק ישנן בין המספר -7 למספר 5?", options: ["12", "2", "-2", "7"], correct: 0, topic: "ציר המספרים ונגדיים" },
+
+            // Theme 2: Multiplication & Division of Directed Numbers (10 Qs)
+            { q: "מהי תוצאת המכפלה: (-4) × (-5)?", options: ["20", "-20", "-9", "9"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "מהי תוצאת המנה: (-24) ÷ 6?", options: ["-4", "4", "-18", "18"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "מהי תוצאת המכפלה: 7 × (-3)?", options: ["-21", "21", "-4", "4"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "חשבו את ערך הביטוי: (-2) × (-3) × (-4)?", options: ["-24", "24", "-9", "9"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "מהי תוצאת החילוק: 0 ÷ (-8)?", options: ["0", "שגיאה / אסור לחלק באפס", "-8", "8"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "מה קורה כאשר מחלקים מספר שלילי במספר שלילי אחר?", options: ["התוצאה תמיד חיובית", "התוצאה תמיד שלילית", "התוצאה היא תמיד 0", "לא ניתן לחלק שלילי בשלילי"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "חשבו את התרגיל הבא על פי סדר פעולות החשבון: -10 + (-4) × (-2)?", options: ["-2", "28", "-18", "16"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "פתרו את התרגיל: 15 ÷ (-3) - 4?", options: ["-9", "-1", "1", "9"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "מהו ערך הביטוי: (-1) בחזקת 5?", options: ["-1", "1", "-5", "5"], correct: 0, topic: "כפל וחילוק מכוונים" },
+            { q: "פתרו את התרגיל הבא: (-18) ÷ (-2) + (-5)?", options: ["4", "-14", "14", "-4"], correct: 0, topic: "כפל וחילוק מכוונים" },
+
+            // Theme 3: Geometry & Angles (10 Qs)
+            { q: "שתי זוויות צמודות מונחות על קו ישר. אם אחת מהן היא 110 מעלות, מה גודלה של השנייה?", options: ["70 מעלות", "110 מעלות", "180 מעלות", "90 מעלות"], correct: 0, topic: "זוויות צמודות וקודקודיות" },
+            { q: "שתי זוויות קודקודיות נוצרות מחיתוך ישרים. אם אחת מהן היא 45 מעלות, מה גודלה של השנייה?", options: ["45 מעלות", "135 מעלות", "90 מעלות", "180 מעלות"], correct: 0, topic: "זוויות צמודות וקודקודיות" },
+            { q: "מהו המשפט הנכון לגבי סכום הזוויות הפנימיות בכל משולש?", options: ["הסכום הוא תמיד 180 מעלות", "הסכום משתנה לפי סוג המשולש", "הסכום הוא תמיד 360 מעלות", "הסכום הוא תמיד 90 מעלות"], correct: 0, topic: "סכום זוויות במשולש" },
+            { q: "במשולש ישר זווית, אחת מהזוויות החדות היא 35 מעלות. מה גודלה של הזווית החדה השנייה?", options: ["55 מעלות", "35 מעלות", "90 מעלות", "45 מעלות"], correct: 0, topic: "סכום זוויות במשולש" },
+            { q: "קו ישר חוצה זווית בגודל של 130 מעלות לשני חלקים שווים. מהו גודלה של כל זווית חדשה?", options: ["65 מעלות", "130 מעלות", "90 מעלות", "45 מעלות"], correct: 0, topic: "חוצה זווית" },
+            { q: "במשולש שווה שוקיים, זווית הראש היא 80 מעלות. מה גודלה של כל אחת מזוויות הבסיס?", options: ["50 מעלות", "80 מעלות", "100 מעלות", "40 מעלות"], correct: 0, topic: "סכום זוויות במשולש" },
+            { q: "אם שלוש הזוויות במשולש שוות זו לזו, מהו גודלה של כל אחת מהן?", options: ["60 מעלות", "90 מעלות", "180 מעלות", "45 מעלות"], correct: 0, topic: "סכום זוויות במשולש" },
+            { q: "שתי זוויות צמודות נמצאות ביחס של 1 ל-2. מהם גדלי הזוויות?", options: ["60 מעלות ו-120 מעלות", "30 מעלות ו-60 מעלות", "90 מעלות ו-90 מעלות", "45 מעלות ו-135 מעלות"], correct: 0, topic: "זוויות צמודות וקודקודיות" },
+            { q: "מהי ההגדרה הנכונה של זווית קהה?", options: ["זווית הגדולה מ-90 מעלות וקטנה מ-180 מעלות", "זווית השווה בדיוק ל-90 מעלות", "זווית הקטנה מ-90 מעלות", "זווית השווה ל-180 מעלות"], correct: 0, topic: "מבוא לזוויות" },
+            { q: "במשולש, שתיים מהזוויות הן 55 מעלות ו-65 מעלות. מה גודלה של הזווית השלישית?", options: ["60 מעלות", "70 מעלות", "180 מעלות", "50 מעלות"], correct: 0, topic: "סכום זוויות במשולש" },
+
+            // Theme 4: Coordinate System & Rectangles (10 Qs)
+            { q: "באיזה רביע נמצאת הנקודה (-3, 4)?", options: ["רביע שני", "רביע ראשון", "רביע שלישי", "רביע רביעי"], correct: 0, topic: "מערכת צירים" },
+            { q: "באיזה רביע נמצאת הנקודה (5, -2)?", options: ["רביע רביעי", "רביע ראשון", "רביע שני", "רביע שלישי"], correct: 0, topic: "מערכת צירים" },
+            { q: "איזה מהנקודות הבאות נמצאת בדיוק על ציר ה-X?", options: ["(4, 0)", "(0, 4)", "(4, 4)", "(0, 0)"], correct: 0, topic: "מערכת צירים" },
+            { q: "נתון מלבן שאורכו 10 ס\"מ ורוחבו 6 ס\"מ. מהו היקף המלבן?", options: ["32 ס\"מ", "60 ס\"מ", "16 ס\"מ", "20 ס\"מ"], correct: 0, topic: "המלבן והיקפו" },
+            { q: "נתון מלבן שאורכו 8 ס\"מ ושטחו 48 סמ\"ר. מהו רוחב המלבן?", options: ["6 ס\"מ", "12 ס\"מ", "8 ס\"מ", "40 ס\"מ"], correct: 0, topic: "המלבן ושטחו" },
+            { q: "מהו שטח ריבוע שהיקפו הוא 24 ס\"מ?", options: ["36 סמ\"ר", "24 סמ\"ר", "16 סמ\"ר", "48 סמ\"ר"], correct: 0, topic: "המלבן ושטחו" },
+            { q: "במערכת צירים, מהו המרחק (ביחידות מידה) בין הנקודה (2, 7) לנקודה (2, -1)?", options: ["8", "6", "1", "7"], correct: 0, topic: "מערכת צירים ומרחקים" },
+            { q: "במערכת צירים, מהו המרחק בין הנקודה (5, 3) לנקודה (1, 3)?", options: ["4 יחידות מרחק", "1 יחידת מרחק", "3 יחידות מרחק", "2 יחידות מרחק"], correct: 0, topic: "מערכת צירים ומרחקים" },
+            { q: "איזו נקודה מייצגת את ראשית הצירים במערכת הדו-מימדית?", options: ["(0, 0)", "(1, 1)", "(0, 1)", "(1, 0)"], correct: 0, topic: "מערכת צירים" },
+            { q: "אם היקף מלבן הוא 40 ס\"מ ואחת מצלעותיו היא 12 ס\"מ, מהו אורך הצלע השנייה?", options: ["8 ס\"מ", "28 ס\"מ", "16 ס\"מ", "14 ס\"מ"], correct: 0, topic: "המלבן והיקפו" },
+
+            // Theme 5: Algebra & Linear Equations (10 Qs)
+            { q: "פתרו את המשוואה הבאה: 2x + 7 = 19. מהו ערכו של x?", options: ["6", "12", "5", "8"], correct: 0, topic: "פתרון משוואות" },
+            { q: "פתרו את המשוואה הבאה: 3x - 5 = x + 7. מהו ערכו של x?", options: ["6", "2", "3", "12"], correct: 0, topic: "פתרון משוואות" },
+            { q: "בקופסה יש x עפרונות. הוסיפו לקופסה עוד 5 עפרונות וכפלו את הכמות פי 2. איזה ביטוי מייצג את המצב?", options: ["2(x + 5)", "2x + 5", "x + 10", "2x + 10"], correct: 0, topic: "משתנים וביטויים אלגבריים" },
+            { q: "פתרו את המשוואה: 5(x - 2) = 15. מהו ערכו של x?", options: ["5", "3", "1", "7"], correct: 0, topic: "פתרון משוואות" },
+            { q: "חוקיות של סדרה מיוצגת על ידי הביטוי האלגברי 4n + 2, כאשר n הוא מקום האיבר. מהו האיבר במקום ה-10?", options: ["42", "40", "16", "22"], correct: 0, topic: "חוקיות אלגברית" },
+            { q: "פתרו את המשוואה הבאה: x ÷ 3 = 8. מהו ערכו של x?", options: ["24", "11", "5", "2"], correct: 0, topic: "פתרון משוואות" },
+            { q: "שאלה מילולית: גיל האב גדול פי 3 מגיל בנו. סכום הגילים שלהם הוא 48. בן כמה הבן?", options: ["12 שנים", "16 שנים", "10 שנים", "14 שנים"], correct: 0, topic: "שאלות מילוליות" },
+            { q: "איזה ביטוי אלגברי שווה ערך לביטוי המפושט: 3x + 5 - x + 2?", options: ["2x + 7", "4x + 7", "2x + 3", "4x + 3"], correct: 0, topic: "משתנים וביטויים אלגבריים" },
+            { q: "פתרו את המשוואה: 4x = -20. מהו ערכו של x?", options: ["-5", "5", "-80", "80"], correct: 0, topic: "פתרון משוואות" },
+            { q: "אם a = -3 ו- b = 4, מהו ערך הביטוי 2a + b?", options: ["-2", "2", "-10", "10"], correct: 0, topic: "משתנים וביטויים אלגבריים" }
+        ];
+
+        let userAnswers = Array(50).fill(null);
+        let activeQuestionIndex = 0;
+        let examTimerInterval = null;
+        let examSeconds = 0;
+
+        function startOfficialExam() {
+            document.getElementById('exam-welcome-view').classList.add('hidden');
+            document.getElementById('exam-active-view').classList.remove('hidden');
+            document.getElementById('exam-result-view').classList.add('hidden');
+            
+            userAnswers = Array(50).fill(null);
+            activeQuestionIndex = 0;
+            examSeconds = 0;
+            
+            buildExamMap();
+            loadExamQuestion();
+            
+            // Start timer
+            if (examTimerInterval) clearInterval(examTimerInterval);
+            examTimerInterval = setInterval(() => {
+                examSeconds++;
+                const hrs = String(Math.floor(examSeconds / 3600)).padStart(2, '0');
+                const mins = String(Math.floor((examSeconds % 3600) / 60)).padStart(2, '0');
+                const secs = String(examSeconds % 60).padStart(2, '0');
+                document.getElementById('exam-timer').innerHTML = `<i class="fa-regular fa-clock"></i> ${hrs}:${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function buildExamMap() {
+            const container = document.getElementById('exam-grid-map');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 0; i < 50; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i + 1;
+                btn.id = `exam-map-dot-${i}`;
+                btn.className = "h-8 text-xs font-bold rounded-lg border transition-all bg-white text-slate-700 border-slate-200 hover:bg-slate-100";
+                btn.onclick = () => {
+                    activeQuestionIndex = i;
+                    loadExamQuestion();
+                };
+                container.appendChild(btn);
+            }
+            updateExamMapVisuals();
+        }
+
+        function updateExamMapVisuals() {
+            for (let i = 0; i < 50; i++) {
+                const btn = document.getElementById(`exam-map-dot-${i}`);
+                if (!btn) continue;
+                
+                // Color states
+                if (i === activeQuestionIndex) {
+                    btn.className = "h-8 text-xs font-black rounded-lg border transition-all bg-indigo-600 text-white border-indigo-700 ring-2 ring-yellow-400";
+                } else if (userAnswers[i] !== null) {
+                    btn.className = "h-8 text-xs font-bold rounded-lg border transition-all bg-emerald-100 text-emerald-800 border-emerald-300";
+                } else {
+                    btn.className = "h-8 text-xs font-bold rounded-lg border transition-all bg-white text-slate-700 border-slate-200 hover:bg-slate-100";
+                }
+            }
+        }
+
+        function loadExamQuestion() {
+            const q = examQuestions[activeQuestionIndex];
+            if (!q) return;
+            document.getElementById('exam-progress-text').innerText = `שאלה ${activeQuestionIndex + 1} מתוך 50`;
+            document.getElementById('active-question-topic').innerText = q.topic;
+            document.getElementById('active-question-text').innerText = q.q;
+
+            const optContainer = document.getElementById('active-question-options-container');
+            if (!optContainer) return;
+            optContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.innerHTML = opt;
+                btn.className = "w-full text-right p-4 rounded-xl border font-bold transition-all text-sm ";
+                
+                if (userAnswers[activeQuestionIndex] === idx) {
+                    btn.className += "bg-indigo-50 border-indigo-500 text-indigo-950 ring-2 ring-indigo-200";
+                } else {
+                    btn.className += "bg-white border-slate-200 text-slate-700 hover:bg-slate-50";
+                }
+
+                btn.onclick = () => {
+                    userAnswers[activeQuestionIndex] = idx;
+                    updateExamMapVisuals();
+                    loadExamQuestion();
+                };
+                optContainer.appendChild(btn);
+            });
+
+            // Adjust navigation buttons states
+            document.getElementById('exam-prev-btn').disabled = (activeQuestionIndex === 0);
+            document.getElementById('exam-next-btn').disabled = (activeQuestionIndex === 49);
+            
+            updateExamMapVisuals();
+        }
+
+        function navigateExamQuestion(dir) {
+            if (dir === 'prev' && activeQuestionIndex > 0) {
+                activeQuestionIndex--;
+            } else if (dir === 'next' && activeQuestionIndex < 49) {
+                activeQuestionIndex++;
+            }
+            loadExamQuestion();
+        }
+
+        function submitExamForGrading() {
+            // Count total answered
+            const answeredCount = userAnswers.filter(ans => ans !== null).length;
+            if (answeredCount < 50) {
+                const confirmProceed = confirm(`שמת לב? ענית רק על ${answeredCount} מתוך 50 שאלות. האם אתה בטוח שברצונך להגיש את המבחן כעת?`);
+                if (!confirmProceed) return;
+            }
+
+            if (examTimerInterval) clearInterval(examTimerInterval);
+
+            // Grade the exam
+            let correctCount = 0;
+            examQuestions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.correct) {
+                    correctCount++;
+                }
+            });
+
+            const rawScore = (correctCount / 50) * 100;
+            const finalScore = Math.round(rawScore);
+
+            // Hide active, show results
+            document.getElementById('exam-active-view').classList.add('hidden');
+            document.getElementById('exam-result-view').classList.remove('hidden');
+
+            const scoreCircle = document.getElementById('result-score-circle');
+            if (scoreCircle) {
+                scoreCircle.innerText = finalScore;
+                
+                // Color based on score
+                if (finalScore >= 90) {
+                    scoreCircle.className = "w-24 h-24 mx-auto bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-4xl shadow-inner font-black animate-bounce";
+                    document.getElementById('result-title').innerText = "מצוין! אלוף המפמ\"ר! 🎉";
+                } else if (finalScore >= 70) {
+                    scoreCircle.className = "w-24 h-24 mx-auto bg-yellow-100 text-yellow-700 rounded-full flex items-center justify-center text-4xl shadow-inner font-black animate-bounce";
+                    document.getElementById('result-title').innerText = "עבודה טובה מאוד! 👍";
+                } else {
+                    scoreCircle.className = "w-24 h-24 mx-auto bg-rose-100 text-rose-700 rounded-full flex items-center justify-center text-4xl shadow-inner font-black animate-bounce";
+                    document.getElementById('result-title').innerText = "מומלץ ללמוד שוב ולשפר! 💪";
+                }
+            }
+
+            // Generate detailed feedback lists
+            const fbContainer = document.getElementById('exam-feedback-list-container');
+            if (!fbContainer) return;
+            fbContainer.innerHTML = '';
+
+            examQuestions.forEach((q, idx) => {
+                const item = document.createElement('div');
+                const isCorrect = (userAnswers[idx] === q.correct);
+                
+                item.className = `p-5 rounded-2xl border text-sm ${isCorrect ? 'bg-emerald-50/40 border-emerald-200' : 'bg-rose-50/40 border-rose-200'} space-y-2`;
+                
+                item.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-extrabold text-slate-800">שאלה ${idx + 1}: ${q.topic}</span>
+                        <span class="${isCorrect ? 'text-emerald-700' : 'text-rose-700'} font-black text-xs">
+                            <i class="fa-solid ${isCorrect ? 'fa-circle-check' : 'fa-circle-xmark'} ml-1"></i> ${isCorrect ? 'תשובה נכונה' : 'שגיאה'}
+                        </span>
+                    </div>
+                    <p class="text-slate-700 font-medium leading-relaxed">${q.q}</p>
+                    <div class="text-xs space-y-1 bg-white p-3 rounded-lg border border-slate-100">
+                        <p><strong class="text-slate-800">התשובה שסימנת:</strong> ${userAnswers[idx] !== null ? q.options[userAnswers[idx]] : '<span class="text-rose-600 font-bold">לא ענית</span>'}</p>
+                        <p><strong class="text-slate-800">התשובה הנכונה:</strong> ${q.options[q.correct]}</p>
+                    </div>
+                `;
+                fbContainer.appendChild(item);
+            });
+        }
+
+        function restartExamSystem() {
+            document.getElementById('exam-welcome-view').classList.remove('hidden');
+            document.getElementById('exam-active-view').classList.add('hidden');
+            document.getElementById('exam-result-view').classList.add('hidden');
+        }
+
+        // SVG Helpers
+        function createSvgLine(svgId, x1, y1, x2, y2, stroke, width, dash = "") {
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", x1);
+            line.setAttribute("y1", y1);
+            line.setAttribute("x2", x2);
+            line.setAttribute("y2", y2);
+            line.setAttribute("stroke", stroke);
+            line.setAttribute("stroke-width", width);
+            if(dash) line.setAttribute("stroke-dasharray", dash);
+            const parent = document.getElementById(svgId);
+            if (parent) parent.appendChild(line);
+        }
+
+        // Standard Circle Drawing helper
+        function createSvgCircle(svgId, cx, cy, r, fill) {
+            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            circle.setAttribute("cx", cx);
+            circle.setAttribute("cy", cy);
+            circle.setAttribute("r", r);
+            circle.setAttribute("fill", fill);
+            const parent = document.getElementById(svgId);
+            if (parent) parent.appendChild(circle);
+        }
+
+        function createSvgText(svgId, text, x, y, fill, fontSize, anchor="start") {
+            const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            t.setAttribute("x", x);
+            t.setAttribute("y", y);
+            t.setAttribute("fill", fill);
+            t.setAttribute("font-size", fontSize);
+            t.setAttribute("font-weight", "bold");
+            t.setAttribute("text-anchor", anchor);
+            t.setAttribute("class", "pointer-events-none select-none"); 
+            t.textContent = text;
+            const parent = document.getElementById(svgId);
+            if (parent) parent.appendChild(t);
+        }
+
+        // Initialize things on Load
+        window.onload = function() {
+            showTopicContent(1);
+            updateSandbox();
+            generateLevelDots();
+            startScenario();
+        }
+    </script>
+</body>
+</html>
